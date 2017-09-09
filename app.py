@@ -4,7 +4,7 @@ import flask
 app = Flask(__name__)
 def getitem(obj, item, default):
     if item not in obj:
-        return "GOOG"
+        return default
     else:
         return obj[item]
 
@@ -72,6 +72,7 @@ def index():
         js_resources=js_resources,
         css_resources=css_resources,
         _tick=tick,
+        price=price
    )
   return encode_utf8(html)
 
