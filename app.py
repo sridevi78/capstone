@@ -26,8 +26,9 @@ def index():
 
   args = flask.request.args
   tick = str(getitem(args, '_tick', 0))
-  #requests and JSON
+  price = getitem(args, 'price', 'open')
   
+  #requests and JSON
   import quandl
   quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
   data=quandl.get_table('WIKI/PRICES',ticker=tick)
