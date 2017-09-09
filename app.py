@@ -72,7 +72,7 @@ def index():
         css_resources=css_resources,
         _tick=tick,
    )
-   return encode_utf8(html)
+  return encode_utf8(html)
 
 if __name__ == '__main__':
   app.run(port=33507)
