@@ -25,7 +25,7 @@ def index():
   from bokeh.util.string import encode_utf8
 
   args = flask.request.args
-  tick = int(getitem(args, '_tick', 0))
+  tick = str(getitem(args, '_tick', 0))
   #requests and JSON
   
   import quandl
