@@ -21,6 +21,15 @@
 
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.js"></script>
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.4.min.js"></script>
+    <title>Embed Demo</title>
+
+    {{ js_resources|indent(4)|safe }}
+
+    {{ css_resources|indent(4)|safe }}
+
+    {{ script|indent(4)|safe }} 
+
+    {{ div|safe }}    
         </head>
 	<body>
 		<div class="container">
@@ -37,10 +46,7 @@
       </div>
 		</div>
 
-
-    {{ script|safe }}
-    {{ div|safe }}
-
+    <title>Plot goes here</title>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

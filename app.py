@@ -14,6 +14,8 @@ def index():
   from bokeh.models.widgets import Slider, TextInput
   from bokeh.plotting import figure
   from bokeh.embed import components  
+  from bokeh.resources import INLINE
+  from bokeh.util.string import encode_utf8
 
   #requests and JSON
   tick="GOOG"
@@ -50,8 +52,12 @@ def index():
           months=["%d %B %Y"],
           years=["%d %B %Y"],
       )  
+  js_resources = INLINE.render_js()
+  css_resources = INLINE.render_css()  
   script, div = components(p)
-  return render_template("index.html", script=script, div=div)
-  
+  html=render_template("index.html", script=script, div=div,js_resources=js_resources,
+        css_resources=css_resources)
+  return encode_utf8(html)
+
 if __name__ == '__main__':
   app.run(port=33507)
