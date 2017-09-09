@@ -26,10 +26,14 @@ def index():
 
   args = flask.request.args
   tick = str(getitem(args, '_tick', 'GOOG'))
-  open1 = flask.request.form.get('_open')
-  close = flask.request.form.get('_close')
-  aopen = flask.request.form.get('_aopen')
-  aclose = flask.request.form.get('_aclose')
+  open1 = '_open' in flask.request.form && flask.request.form.get('_open') == '1'
+  close = '_close' in flask.request.form && flask.request.form.get('_close') == '1'
+  aopen = '_aopen' in flask.request.form && flask.request.form.get('_aopen') == '1'
+  aclose = '_aclose' in flask.request.form && flask.request.form.get('_aclose') == '1'
+  #open1 = flask.request.form.get('_open')
+  #close = flask.request.form.get('_close')
+  #aopen = flask.request.form.get('_aopen')
+  #aclose = flask.request.form.get('_aclose')
 
   print tick,open1,close,aopen,aclose
   #requests and JSON
