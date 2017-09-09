@@ -26,10 +26,11 @@ def index():
 
   args = flask.request.args
   tick = str(getitem(args, '_tick', 'GOOG'))
-  open1 = str(getitem(args, '_open', 'checked'))
-  close = str(getitem(args, '_close', 'checked'))
-  aopen = str(getitem(args, '_aopen', 'checked'))
-  aclose = str(getitem(args, '_aclose', 'checked'))
+  open1 = str(flask.request.form.get('_open'))
+  close = str(flask.request.form.get('_close'))
+  aopen = str(flask.request.form.get('_aopen'))
+  aclose = str(flask.request.form.get('_aclose'))
+
   print tick,open1,close,aopen,aclose
   #requests and JSON
   import quandl
