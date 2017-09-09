@@ -1,13 +1,6 @@
 from flask import Flask, render_template, request, redirect
-import flask
 
 app = Flask(__name__)
-
-def getitem(obj, item, default):
-    if item not in obj:
-        return "GOOG"
-    else:
-        return obj[item]
 
 app.route('/')
 def index():
@@ -24,12 +17,9 @@ def index():
   from bokeh.resources import INLINE
   from bokeh.util.string import encode_utf8
 
-  args = flask.request.args
-
-  # Get all the form arguments in the url with defaults
-  tick = str(getitem(args, '_ticker', 0))
- 
+   
   #requests and JSON
+  tick="GOOG"
   import quandl
   quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
   data=quandl.get_table('WIKI/PRICES',ticker=tick)
