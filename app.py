@@ -2,8 +2,13 @@ from flask import Flask, render_template, request, redirect
 import flask
 
 app = Flask(__name__)
+def getitem(obj, item, default):
+    if item not in obj:
+        return "GOOG"
+    else:
+        return obj[item]
 
-@app.route('/')
+app.route('/')
 def index():
   import numpy as np
   import pandas as pd
