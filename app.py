@@ -52,12 +52,16 @@ def index():
   )
 
   # add a line renderer with legend and line thickness
-  p.line(sm_date, sm_open, line_color="red", legend="Opening", line_width=2)
-  p.line(sm_date, sm_close, line_color="green", legend="Closing",line_width=2)
-  p.line(sm_date, sm_adjopen, line_color="blue", legend="Adjusted Opening",line_width=2)
-  p.circle(sm_date, sm_adjopen, line_color="blue", fill_color="blue",legend="Adjusted Opening", line_width=2)
-  p.line(sm_date, sm_adjclose, line_color="orange", legend="Adjusted Closing",line_width=2)
-  p.circle(sm_date, sm_adjclose, line_color="orange", fill_color="orange",legend="Adjusted Closing", line_width=2)
+  if open1 == 'checked':
+      p.line(sm_date, sm_open, line_color="red", legend="Opening", line_width=2)
+  if close == 'checked':
+      p.line(sm_date, sm_close, line_color="green", legend="Closing",line_width=2)
+  if aopen == 'checked':
+      p.line(sm_date, sm_adjopen, line_color="blue", legend="Adjusted Opening",line_width=2)
+      p.circle(sm_date, sm_adjopen, line_color="blue", fill_color="blue",legend="Adjusted Opening", line_width=2)
+  if aclose == 'checked':
+      p.line(sm_date, sm_adjclose, line_color="orange", legend="Adjusted Closing",line_width=2)
+      p.circle(sm_date, sm_adjclose, line_color="orange", fill_color="orange",legend="Adjusted Closing", line_width=2)
 
   p.xaxis.formatter=DatetimeTickFormatter(
           hours=["%d %B %Y"],
