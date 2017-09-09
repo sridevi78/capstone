@@ -65,7 +65,7 @@ def index():
   css_resources = INLINE.render_css()  
   script, div = components(p)
   html = flask.render_template(
-        'embed.html',
+        'index.html',
         plot_script=script,
         plot_div=div,
         js_resources=js_resources,
