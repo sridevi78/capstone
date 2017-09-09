@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 import flask
 
 app = Flask(__name__)
+
 def getitem(obj, item, default):
     if item not in obj:
         return "GOOG"

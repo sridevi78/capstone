@@ -21,7 +21,13 @@
 
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.4.min.js"></script>
     <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.4.min.js"></script>
-    
+    <title>Embed Demo</title>
+
+            {{ js_resources|indent(4)|safe }}
+
+            {{ css_resources|indent(4)|safe }}
+
+            {{ script|indent(4)|safe }}
         </head>
 	<body>
 		<div class="container">
@@ -31,19 +37,11 @@
           <ul>
             <title>Embed Demo</title>
 
-            {{ js_resources|indent(4)|safe }}
-
-            {{ css_resources|indent(4)|safe }}
-
-            {{ script|indent(4)|safe }} 
-
        <p> Select your settings: </p>
        <form name="text_button" method='GET'>
         <br>
         Ticker:
         <input type="text" name="_ticker" value="{{ _ticker }}">
-        <br>
-        <button type="submit">Submit</button>
         </form>
           </ul>
         </div>
