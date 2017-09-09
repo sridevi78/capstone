@@ -25,9 +25,12 @@ def index():
   from bokeh.util.string import encode_utf8
 
   args = flask.request.args
-  tick = str(getitem(args, '_tick', 0))
-  price = getitem(args, 'price', 'open')
-  
+  tick = str(getitem(args, '_tick', 'GOOG'))
+  open1 = int(getitem(args, '_open', 'checked'))
+  close = int(getitem(args, '_close', 'checked'))
+  aopen = int(getitem(args, '_aopen', 'checked'))
+  aclose = int(getitem(args, '_aclose', 'checked'))
+
   #requests and JSON
   import quandl
   quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
@@ -72,8 +75,11 @@ def index():
         js_resources=js_resources,
         css_resources=css_resources,
         _tick=tick,
-        price=price
-   )
+        _open=open1,
+        _close=close,
+        _aopen=aopen,
+        _aclose=aclose
+       )
   return encode_utf8(html)
 
 if __name__ == '__main__':

@@ -52,15 +52,15 @@
     
     
     <form name="text_button" method='GET'>
-        Display Options:
-        <select name="price">
-            <option {{ "selected" if price|indent(4)|safe == "Open" }} value="open">Open</option>
-            <option {{ "selected" if price|indent(4)|safe == "Close" }} value="close">Close</option>
-            <option {{ "selected" if price|indent(4)|safe == "Adjusted Open" }} value="aopen">Adjusted Open</option>
-            <option {{ "selected" if price|indent(4)|safe == "Adjusted Close" }} value="aclose">Adjusted Close</option>
-        </select><br>
+        <br>
         Ticker:
         <input type="text" name="_tick" value="{{ _tick }}">
+        <br>
+        Options:
+        <input type="checkbox" name="open" value="_open" checked>
+        <input type="checkbox" name="close" value="_close" checked>
+        <input type="checkbox" name="Adjusted open" value="_aopen" checked>
+        <input type="checkbox" name="Adjusted close" value="_aclose" checked>
         <br>
         <button type="submit">Submit</button>
     </form>
