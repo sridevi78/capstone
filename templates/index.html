@@ -27,7 +27,7 @@
 
             {{ css_resources|indent(4)|safe }}
 
-            {{ script|indent(4)|safe }}
+            {{ plot_script|indent(4)|safe }}
 
         </head>
 	<body>
@@ -58,6 +58,6 @@
         <br>
         <button type="submit">Submit</button>
     </form>
-    {{ div|indent(4)|safe }}
+    {{ plot_div|indent(4)|safe }}
 	</body>
 </html>
