@@ -30,7 +30,7 @@ def index():
   close = str(getitem(args, '_close', 'checked'))
   aopen = str(getitem(args, '_aopen', 'checked'))
   aclose = str(getitem(args, '_aclose', 'checked'))
-
+  print tick,open1,close,aopen,aclose
   #requests and JSON
   import quandl
   quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
