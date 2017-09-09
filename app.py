@@ -13,7 +13,7 @@ def index():
   from bokeh.models import ColumnDataSource, DatetimeTickFormatter
   from bokeh.models.widgets import Slider, TextInput
   from bokeh.plotting import figure
-  
+  from bokeh.embed import components  
 
   #requests and JSON
   tick="GOOG"
