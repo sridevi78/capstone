@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request, redirect
+import flask
 
 app = Flask(__name__)
+def getitem(obj, item, default):
+    if item not in obj:
+        return "GOOG"
+    else:
+        return obj[item]
 
 @app.route('/')
 
@@ -18,9 +24,10 @@ def index():
   from bokeh.resources import INLINE
   from bokeh.util.string import encode_utf8
 
-   
+  args = flask.request.args
+  tick = int(getitem(args, '_tick', 0))
   #requests and JSON
-  tick="GOOG"
+  
   import quandl
   quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
   data=quandl.get_table('WIKI/PRICES',ticker=tick)
@@ -57,9 +64,15 @@ def index():
   js_resources = INLINE.render_js()
   css_resources = INLINE.render_css()  
   script, div = components(p)
-  html=render_template("index.html", script=script, div=div,js_resources=js_resources,
-        css_resources=css_resources)
-  return encode_utf8(html)
+  html = flask.render_template(
+        'embed.html',
+        plot_script=script,
+        plot_div=div,
+        js_resources=js_resources,
+        css_resources=css_resources,
+        _tick=tick,
+   )
+   return encode_utf8(html)
 
 if __name__ == '__main__':
   app.run(port=33507)
