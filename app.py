@@ -28,14 +28,14 @@ def index():
   #print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
   
-  #open1 = flask.request.form.get('_open') 
+  open1 = flask.request.form.get('_open') 
   #selected = flask.request.form.getlist('check')
   #any_selected = bool(selected)
   #close = flask.request.form.get('_close') 
   #aopen = flask.request.form.get('_aopen') 
   #aclose = flask.request.form.get('_aclose') 
   #formData = flask.request.values  
-  open1 = args['_open']
+  #open1 = args['_open']
          
   close = flask.request.form.get('_close')
   aopen = flask.request.form.get('_aopen')
