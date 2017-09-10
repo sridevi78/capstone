@@ -32,11 +32,11 @@ def index():
   #close = flask.request.form.get('_close') 
   #aopen = flask.request.form.get('_aopen') 
   #aclose = flask.request.form.get('_aclose') 
-  formData = flask.request.values  
-  open1 = flask.request.get('_open')
-  close = flask.request.get('_close')
-  aopen = flask.request.get('_aopen')
-  aclose = flask.request.get('_aclose')
+  #formData = flask.request.values  
+  open1 = flask.request.form.get('_mpen')
+  close = flask.request.form.get('_close')
+  aopen = flask.request.form.get('_aopen')
+  aclose = flask.request.form.get('_aclose')
 
   print tick,open1,close,aopen,aclose
 
