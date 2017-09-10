@@ -32,7 +32,7 @@ def index():
   #close = flask.request.form.get('_close') 
   #aopen = flask.request.form.get('_aopen') 
   #aclose = flask.request.form.get('_aclose') 
-  formData = flask.request.values if flask.request.method == "GET" else flask.request.values
+  formData = flask.request.values if flask.request.method == "GET" 
   open1 = flask.request.form.get('_open')
   close = flask.request.form.get('_close')
   aopen = flask.request.form.get('_aopen')
