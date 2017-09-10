@@ -24,8 +24,8 @@ def index():
   from bokeh.resources import INLINE
   from bokeh.util.string import encode_utf8
 
-  arg1 = flask.request.args
-  print arg1.getlist('_open')
+  args = flask.request.args
+  print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
   #open1 = flask.request.form.get('_open') 
   #selected = flask.request.form.getlist('check')
