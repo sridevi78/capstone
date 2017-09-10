@@ -8,6 +8,9 @@ def getitem(obj, item, default):
     else:
         return obj[item]
 
+def getitem2(obj, item):
+    return obj[item]
+
 @app.route('/')
 
 def index():
@@ -28,7 +31,7 @@ def index():
   #print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
   
-  open1 = request.form.getlist('_open')
+  open1 = str(getitem2(args,'opening')
   
   #selected = flask.request.form.getlist('check')
   #any_selected = bool(selected)
