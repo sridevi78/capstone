@@ -30,7 +30,7 @@ def index():
   args = flask.request.args
   #print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
-  if form.validate_on_submit(): 
+  if request.form.validate_on_submit(): 
      open1 = request.form.get('opening') 
   
   
