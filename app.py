@@ -33,12 +33,13 @@ def index():
   #aopen = flask.request.form.get('_aopen') 
   #aclose = flask.request.form.get('_aclose') 
   formData = flask.request.values  
-  open1 = flask.request.form.get('_open')
-  close = flask.request.form.get('_close')
-  aopen = flask.request.form.get('_aopen')
-  aclose = flask.request.form.get('_aclose')
+  open1 = flask.request.get('_open')
+  close = flask.request.get('_close')
+  aopen = flask.request.get('_aopen')
+  aclose = flask.request.get('_aclose')
 
-  print tick, formData.values.values
+  print tick,open1,close,aopen,aclose
+
   #requests and JSON
   import quandl
   quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
