@@ -37,7 +37,7 @@ def index():
   #aopen = flask.request.form.get('_aopen')
   #aclose = flask.request.form.get('_aclose')
 
-  print tick, any_selected
+  print tick, selected, any_selected
   #requests and JSON
   import quandl
   quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
