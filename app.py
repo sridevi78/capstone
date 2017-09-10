@@ -25,7 +25,7 @@ def index():
   from bokeh.util.string import encode_utf8
 
   args = flask.request.args
-  print args.getlist('_open')
+  #print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
   
   #open1 = flask.request.form.get('_open') 
@@ -35,12 +35,13 @@ def index():
   #aopen = flask.request.form.get('_aopen') 
   #aclose = flask.request.form.get('_aclose') 
   #formData = flask.request.values  
-  open1 = flask.request.method == 'GET' and opening == '_open'
+  open1 = request.form.get("_open") != None
+         
   close = flask.request.form.get('_close')
   aopen = flask.request.form.get('_aopen')
   aclose = flask.request.form.get('_aclose')
   #value1= args.type 
-  #print tick, value1
+  print open1
 
   #requests and JSON
   import quandl
