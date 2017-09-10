@@ -31,7 +31,7 @@ def index():
   #print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
   
-  if request.method == 'GET':  
+  if request.method == 'POST':  
       open1 = request.form.get('_open') 
   
   
