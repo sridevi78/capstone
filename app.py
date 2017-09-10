@@ -35,7 +35,7 @@ def index():
   #aopen = flask.request.form.get('_aopen') 
   #aclose = flask.request.form.get('_aclose') 
   #formData = flask.request.values  
-  open1 = flask.request.method == 'GET' and open='_open'
+  open1 = flask.request.method == 'GET' and opening == '_open'
   close = flask.request.form.get('_close')
   aopen = flask.request.form.get('_aopen')
   aclose = flask.request.form.get('_aclose')
