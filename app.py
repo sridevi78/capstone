@@ -32,7 +32,7 @@ def index():
   tick = str(getitem(args, '_tick', 'GOOG'))
   
   if request.method == 'GET':  
-      open1 = request.form.get('opening') 
+      open1 = request.form.get('_open') 
   
   
   #selected = flask.request.form.getlist('check')
