@@ -30,9 +30,8 @@ def index():
   args = flask.request.args
   #print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
-  
-  if request.method == 'POST':  
-      open1 = request.form.get('_open') 
+  if form.validate_on_submit(): 
+     open1 = request.form.get('opening') 
   
   
   #selected = flask.request.form.getlist('check')
