@@ -37,7 +37,7 @@ def index():
   close = flask.request.form.get('_close')
   aopen = flask.request.form.get('_aopen')
   aclose = flask.request.form.get('_aclose')
-  value1= "_open" in args.values 
+  value1= args.type() 
   print tick, value1
 
   #requests and JSON
