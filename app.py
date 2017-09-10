@@ -26,10 +26,10 @@ def index():
 
   args = flask.request.args
   tick = str(getitem(args, '_tick', 'GOOG'))
-  open1 = flask.request.form.get('_open') == '1'
-  close = flask.request.form.get('_close') == '1'
-  aopen = flask.request.form.get('_aopen') == '1'
-  aclose = flask.request.form.get('_aclose') == '1'
+  open1 = flask.request.form.get('_open') 
+  close = flask.request.form.get('_close') 
+  aopen = flask.request.form.get('_aopen') 
+  aclose = flask.request.form.get('_aclose') 
   #open1 = flask.request.form.get('_open')
   #close = flask.request.form.get('_close')
   #aopen = flask.request.form.get('_aopen')
