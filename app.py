@@ -27,10 +27,10 @@ def index():
   args = flask.request.args
   tick = str(getitem(args, '_tick', 'GOOG'))
   open1 = request.args.get('opening') 
-  close = flask.request.form.get('_close')
-  aopen = flask.request.form.get('_aopen')
-  aclose = flask.request.form.get('_aclose')
-  print open1
+  close = request.args.get('closing')
+  aopen = request.args.get('adjustedopening')
+  aclose = request.args.get('adjustedclosing')
+  print open1,close,aopen,aclose
 
   #requests and JSON
   import quandl
@@ -55,12 +55,12 @@ def index():
   # add a line renderer with legend and line thickness
   if open1:
       p.line(sm_date, sm_open, line_color="red", legend="Opening", line_width=2)
-  if close == 'checked':
+  if close:
       p.line(sm_date, sm_close, line_color="green", legend="Closing",line_width=2)
-  if aopen == 'checked':
+  if aopen:
       p.line(sm_date, sm_adjopen, line_color="blue", legend="Adjusted Opening",line_width=2)
       p.circle(sm_date, sm_adjopen, line_color="blue", fill_color="blue",legend="Adjusted Opening", line_width=2)
-  if aclose == 'checked':
+  if aclose:
       p.line(sm_date, sm_adjclose, line_color="orange", legend="Adjusted Closing",line_width=2)
       p.circle(sm_date, sm_adjclose, line_color="orange", fill_color="orange",legend="Adjusted Closing", line_width=2)
 
