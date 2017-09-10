@@ -28,7 +28,8 @@ def index():
   #print args.getlist('_open')
   tick = str(getitem(args, '_tick', 'GOOG'))
   
-  open1 = flask.request.form.get('_open') 
+  open1 = request.form.getlist('opening')
+  
   #selected = flask.request.form.getlist('check')
   #any_selected = bool(selected)
   #close = flask.request.form.get('_close') 
@@ -64,7 +65,7 @@ def index():
   )
 
   # add a line renderer with legend and line thickness
-  if open1 == 'checked':
+  if open1 == '_open':
       p.line(sm_date, sm_open, line_color="red", legend="Opening", line_width=2)
   if close == 'checked':
       p.line(sm_date, sm_close, line_color="green", legend="Closing",line_width=2)
