@@ -38,7 +38,7 @@ def index():
   aopen = flask.request.form.get('_aopen')
   aclose = flask.request.form.get('_aclose')
 
-  print tick,open1,close,aopen,aclose
+  print tick, args
 
   #requests and JSON
   import quandl
