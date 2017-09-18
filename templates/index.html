@@ -7,7 +7,7 @@
     <meta name="author" content="@gotoariel">
     <!-- <link rel="icon" href="favicon.ico"> -->
 
-		<title>Stock Data Lookup</title>
+		<title>Recipe Lookup</title>
 
     <!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,7 +34,7 @@
 		<div class="container">
       <div class="row">
         <div class="col-lg-12 text-left">
-          <h2>Ticker Lookup app</h2>
+          <h2>Recipe Lookup app</h2>
           <ul>
             <title>Embed Demo</title>
           </ul>
@@ -53,21 +53,34 @@
     
     <form name="text_button" method='GET'>
         <br>
-        Ticker Symbol:
-        <input type="text" name="_tick" value="{{ _tick }}">
+        Allergic to:
         <br>
-        <input type="checkbox" name="opening" value="_open" checked>
-        Opening Price
+        <input type="checkbox" name="milk" value="_milk" unchecked>
+        Milk
         <br>
-        <input type="checkbox" name="closing" value="_close" checked>
-        Closing Price
+        <input type="checkbox" name="eggs" value="_eggs" checked>
+        Eggs
         <br>
-        <input type="checkbox" name="adjustedopening" value="_aopen" checked>
-        Adjusted Opening Price
+        <input type="checkbox" name="peanuts" value="_pnut" checked>
+        Peanuts
         <br>
-        <input type="checkbox" name="adjustedclosing" value="_aclose" checked>
-        Adjusted Closing Price
+        <input type="checkbox" name="treenuts" value="_tnuts" checked>
+        Treenuts
         <br>
+        <input type="checkbox" name="soy" value="_soy" checked>
+        Soy
+        <br>
+        <input type="checkbox" name="wheat" value="_wheat" checked>
+        Wheat
+        <br>
+        <input type="checkbox" name="fish" value="_fish" checked>
+        Fish
+        <br>
+        <input type="checkbox" name="sfish" value="_sfish" checked>
+        Shellfish
+        <br>
+        <input type="checkbox" name="sesame" value="_sesame" checked>
+        Sesame
         <button type="submit">Submit</button>
     </form>
     {{ plot_div|indent(4)|safe }}
