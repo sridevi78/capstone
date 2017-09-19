@@ -31,7 +31,7 @@ def index():
   
   p = figure(
      tools="pan,box_zoom,reset,save",
-     y_axis_type="linear",title="" %tick,
+     y_axis_type="linear",title="",
      x_axis_label='Date', y_axis_label='Price'
   )
 
