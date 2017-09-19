@@ -63,7 +63,6 @@ def index():
         js_resources=js_resources,
         css_resources=css_resources,
         _milk=milk,
-        _fish=fish,
         _pnut=pnut,
         _tnuts=tnuts,
         _wheat=wheat,
