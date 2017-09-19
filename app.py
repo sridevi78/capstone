@@ -22,11 +22,11 @@ def index():
   fish = args.get('fish')
   pnut = args.get('peanuts')
   tnuts = args.get('treenuts')
-  wheat=args.get('wheat')
-  soy=args.get('soy')
-  fish=args.get('fish')
-  sfish=args.get('sfish')
-  sesame=args.get('sesame')
+  wheat = args.get('wheat')
+  soy = args.get('soy')
+  fish = args.get('fish')
+  sfish = args.get('sfish')
+  sesame = args.get('sesame')
 
   
   p = figure(
