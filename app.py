@@ -36,15 +36,15 @@ def index():
   )
 
   # add a line renderer with legend and line thickness
-  if milk:
-  if eggs:
-  if pnut:
-  if tnuts:
-  if wheat:
-  if soy:
-  if fish:
-  if sfish:
-  if sesame:
+  #if milk:
+  #if eggs:
+  #if pnut:
+  #if tnuts:
+  #if wheat:
+  #if soy:
+  #if fish:
+  #if sfish:
+  #if sesame:
 
   p.xaxis.formatter=DatetimeTickFormatter(
           hours=["%d %B %Y"],
