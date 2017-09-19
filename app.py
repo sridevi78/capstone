@@ -2,53 +2,39 @@ from flask import Flask, render_template, request, redirect
 import flask
 
 app = Flask(__name__)
-def getitem(obj, item, default):
-    if item not in obj:
-        return default
-    else:
-        return obj[item]
 
 @app.route('/')
 
+
+import numpy as np
+import pandas as pd
+import requests
+from datetime import datetime
+from bokeh.layouts import row, widgetbox
+from bokeh.models import ColumnDataSource, DatetimeTickFormatter
+from bokeh.models.widgets import Slider, TextInput
+from bokeh.plotting import figure
+from bokeh.embed import components
+from bokeh.resources import INLINE
+from bokeh.util.string import encode_utf8
+
+
 def index():
-  import numpy as np
-  import pandas as pd
-  import requests
-  from datetime import datetime
-  from bokeh.io import curdoc 
-  from bokeh.layouts import row, widgetbox
-  from bokeh.models import ColumnDataSource, DatetimeTickFormatter
-  from bokeh.models.widgets import Slider, TextInput
-  from bokeh.plotting import figure
-  from bokeh.embed import components  
-  from bokeh.resources import INLINE
-  from bokeh.util.string import encode_utf8
-
   args = flask.request.args
-  tick = str(getitem(args, '_tick', 'GOOG'))
-  open1 = request.args.get('opening') 
-  close = request.args.get('closing')
-  aopen = request.args.get('adjustedopening')
-  aclose = request.args.get('adjustedclosing')
-  print open1,close,aopen,aclose
+  milk = args.get('milk') 
+  fish = args.get('fish')
+  pnut = args.get('peanuts')
+  tnuts = args.get('treenuts')
+  wheat=args.get('wheat')
+  soy=args.get('soy')
+  fish=args.get('fish')
+  sfish=args.get('sfish')
+  sesame=args.get('sesame')
 
-  #requests and JSON
-  import quandl
-  quandl.ApiConfig.api_key = 'LBx4fXSMArrNorDxMc49'
-  data=quandl.get_table('WIKI/PRICES',ticker=tick)
-  data_new=data[(datetime.now().date()-data['date']).apply(lambda x: float(x.days)) <=31.0]
   
-
-  sm_date=list(data_new['date'])
-  sm_open=list(data_new['open'])
-  sm_close=list(data_new['close'])
-  sm_adjopen=list(data_new['adj_open'])
-  sm_adjclose=list(data_new['adj_close'])
-
-
   p = figure(
      tools="pan,box_zoom,reset,save",
-     y_axis_type="linear",title="Stock Market Prices for  %s" %tick,
+     y_axis_type="linear",title="" %tick,
      x_axis_label='Date', y_axis_label='Price'
   )
 
@@ -79,11 +65,15 @@ def index():
         plot_div=div,
         js_resources=js_resources,
         css_resources=css_resources,
-        _tick=tick,
-        _open=open1,
-        _close=close,
-        _aopen=aopen,
-        _aclose=aclose
+        _milk=milk,
+        _fish=fish,
+        _pnut=pnut,
+        _tnuts=tnuts,
+        _wheat=wheat,
+        _soy=soy,
+        _fish=fish,
+        _sfish=sfish,
+        _sesame=sesame
        )
   return encode_utf8(html)
 
