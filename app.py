@@ -19,7 +19,7 @@ def index():
   from bokeh.util.string import encode_utf8
   args = flask.request.args
   milk = args.get('milk') 
-  fish = args.get('fish')
+  eggs = args.get('eggs')
   pnut = args.get('peanuts')
   tnuts = args.get('treenuts')
   wheat = args.get('wheat')
@@ -36,16 +36,15 @@ def index():
   )
 
   # add a line renderer with legend and line thickness
-  if open1:
-      p.line(sm_date, sm_open, line_color="red", legend="Opening", line_width=2)
-  if close:
-      p.line(sm_date, sm_close, line_color="green", legend="Closing",line_width=2)
-  if aopen:
-      p.line(sm_date, sm_adjopen, line_color="blue", legend="Adjusted Opening",line_width=2)
-      p.circle(sm_date, sm_adjopen, line_color="blue", fill_color="blue",legend="Adjusted Opening", line_width=2)
-  if aclose:
-      p.line(sm_date, sm_adjclose, line_color="orange", legend="Adjusted Closing",line_width=2)
-      p.circle(sm_date, sm_adjclose, line_color="orange", fill_color="orange",legend="Adjusted Closing", line_width=2)
+  if milk:
+  if eggs:
+  if pnut:
+  if tnuts:
+  if wheat:
+  if soy:
+  if fish:
+  if sfish:
+  if sesame:
 
   p.xaxis.formatter=DatetimeTickFormatter(
           hours=["%d %B %Y"],
@@ -63,6 +62,7 @@ def index():
         js_resources=js_resources,
         css_resources=css_resources,
         _milk=milk,
+        _eggs=eggs,
         _pnut=pnut,
         _tnuts=tnuts,
         _wheat=wheat,
