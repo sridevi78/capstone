@@ -5,21 +5,18 @@ app = Flask(__name__)
 
 @app.route('/')
 
-
-import numpy as np
-import pandas as pd
-import requests
-from datetime import datetime
-from bokeh.layouts import row, widgetbox
-from bokeh.models import ColumnDataSource, DatetimeTickFormatter
-from bokeh.models.widgets import Slider, TextInput
-from bokeh.plotting import figure
-from bokeh.embed import components
-from bokeh.resources import INLINE
-from bokeh.util.string import encode_utf8
-
-
 def index():
+  import numpy as np
+  import pandas as pd
+  import requests
+  from datetime import datetime
+  from bokeh.layouts import row, widgetbox
+  from bokeh.models import ColumnDataSource, DatetimeTickFormatter
+  from bokeh.models.widgets import Slider, TextInput
+  from bokeh.plotting import figure
+  from bokeh.embed import components
+  from bokeh.resources import INLINE
+  from bokeh.util.string import encode_utf8
   args = flask.request.args
   milk = args.get('milk') 
   fish = args.get('fish')
