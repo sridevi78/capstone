@@ -82,14 +82,16 @@
         <input type="checkbox" name="sesame" value="_sesame" unchecked>
         Sesame
         <br>
-        <select name="Item_1">
         Cook Time:
+        <br>
+        <select name="Item_1">
         <option value="le15">under 15 minutes</option>
         <option value="le30">under 30 minutes</option> 
         <option value="le45">under 45 minutes</option>
         <option value="le60">under 60 minutes</option>
         <option value="gt60">over an hour</option>
         </select>
+        <br>
         <button type="submit">Submit</button>
     </form>
     {{ plot_div|indent(4)|safe }}
