@@ -34,7 +34,7 @@
 		<div class="container">
       <div class="row">
         <div class="col-lg-12 text-left">
-          <h2>Recipe Lookup app</h2>
+          <h2>Recipe Lookup</h2>
           <ul>
             <title>Embed Demo</title>
           </ul>
@@ -81,6 +81,15 @@
         <br>
         <input type="checkbox" name="sesame" value="_sesame" unchecked>
         Sesame
+        <br>
+        <select name="Item_1">
+        Cook Time:
+        <option value="le15">under 15 minutes</option>
+        <option value="le30">under 30 minutes</option> 
+        <option value="le45">under 45 minutes</option>
+        <option value="le60">under 60 minutes</option>
+        <option value="gt60">over an hour</option>
+        </select>
         <button type="submit">Submit</button>
     </form>
     {{ plot_div|indent(4)|safe }}
