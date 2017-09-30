@@ -31,15 +31,9 @@ def index():
   sesame = args.get('sesame')
 
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-  print(rcp_data[0])
-  #print(rcp_data[0][1])
-  #print(rcp_data[0][2])
-  #print(rcp_data[0][3])
-  #print(rcp_data[0][4])
-  #print(rcp_data[0][5])
-  #print(rcp_data[0][6])
-  #print(type(rcp_data[0]))
+  print rcp_data[0]
   print len(rcp_data)
+  
   p = figure(
      tools="pan,box_zoom,reset,save",
      y_axis_type="linear",title="",
