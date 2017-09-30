@@ -5,6 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 
+import pandas as pd
+
+
 def ing_parse():
     rcp_data = pd.read_csv('recipe_data1.csv')
     print(rcp_data[0][0])
@@ -21,7 +24,6 @@ def ing_parse():
 
 def index():
   import numpy as np
-  import pandas as pd
   import requests
   from datetime import datetime
   from bokeh.layouts import row, widgetbox
