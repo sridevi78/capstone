@@ -33,7 +33,8 @@ def index():
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
   #for i in range(len(rcp_data)):
   for j in rcp_data.iloc[0]:
-      print j  
+      print j 
+      print "***************" 
   print len(rcp_data)
   
   p = figure(
