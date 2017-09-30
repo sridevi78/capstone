@@ -5,6 +5,23 @@ app = Flask(__name__)
 
 @app.route('/')
 
+def ing_parse():
+    import dill
+    with open('recipe_data1.csv','rb') as f:
+        rcp_data=dill.load(f)
+
+    print(rcp_data[0][0])
+    print(rcp_data[0][1])
+    print(rcp_data[0][2])
+    print(rcp_data[0][3])
+    print(rcp_data[0][4])
+    print(rcp_data[0][5])
+    print(rcp_data[0][6])
+    print(type(rcp_data[0]))
+    return
+
+
+
 def index():
   import numpy as np
   import pandas as pd
@@ -28,7 +45,9 @@ def index():
   sfish = args.get('sfish')
   sesame = args.get('sesame')
 
-  
+  ing_parse()
+
+
   p = figure(
      tools="pan,box_zoom,reset,save",
      y_axis_type="linear",title="",
