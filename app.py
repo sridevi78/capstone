@@ -31,7 +31,7 @@ def index():
   sesame = args.get('sesame')
 
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-  #print(rcp_data[0][0])
+  print(rcp_data[0])
   #print(rcp_data[0][1])
   #print(rcp_data[0][2])
   #print(rcp_data[0][3])
