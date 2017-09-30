@@ -6,10 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def ing_parse():
-    import dill
-    with open('recipe_data1.csv','rb') as f:
-        rcp_data=dill.load(f)
-
+    rcp_data = pd.read_csv('recipe_data1.csv')
     print(rcp_data[0][0])
     print(rcp_data[0][1])
     print(rcp_data[0][2])
