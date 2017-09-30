@@ -31,7 +31,8 @@ def index():
   sesame = args.get('sesame')
 
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-  print rcp_data[0]
+  for index, row in rcp_data.iterrows():
+      print row
   print len(rcp_data)
   
   p = figure(
