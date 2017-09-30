@@ -29,7 +29,7 @@ def index():
   sfish = args.get('sfish')
   sesame = args.get('sesame')
 
-  rcp_data = pd.read_csv('recipe_data1.csv')
+  rcp_data = pd.read_csv('recipe_data1.csv',quoting=csv.QUOTE_NONE)
   #print(rcp_data[0][0])
   #print(rcp_data[0][1])
   #print(rcp_data[0][2])
