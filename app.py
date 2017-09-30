@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 def index():
   import numpy as np
+  import pandas as pd
   import requests
   from datetime import datetime
   from bokeh.layouts import row, widgetbox
