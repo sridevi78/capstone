@@ -32,9 +32,7 @@ def index():
 
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
   #for i in range(len(rcp_data)):
-  print rcp_data.iloc[[0]]
-  print "***************"
-  print rcp_data.iloc[[1]]
+  print rcp_data
   print "***************" 
   print len(rcp_data)
   
