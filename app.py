@@ -40,7 +40,27 @@ def index():
   stop8=['barnacle','crab','crawfish','krill','lobster','prawns','shrimp','clams','mussels','scallops','snails','squid']
   stop9=['gingelly oil','sesame flour','sesame oil','sesame paste','sesame salt','sesame seed','tahini','til']
 
-  
+  stopwords=[]
+  if milk:
+     stopwords.append(stop1)
+  if eggs:
+     stopwords.append(stop2)
+  if pnut:
+     stopwords.append(stop3)
+  if tnuts:
+     stopwords.append(stop4)
+  if wheat:
+     stopwords.append(stop5)
+  if soy:
+     stopwords.append(stop6)
+  if fish:
+     stopwords.append(stop7)
+  if sfish:
+     stopwords.append(stop8)
+  if sesame:
+     stopwords.append(stop9)
+
+ 
 
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
   #for i in range(len(rcp_data)):
