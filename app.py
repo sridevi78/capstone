@@ -9,6 +9,13 @@ def index():
   from bokeh.resources import INLINE
   from bokeh.embed import components
   from bokeh.util.string import encode_utf8
+  from bokeh.plotting import figure
+   p = figure(
+      tools="pan,box_zoom,reset,save",
+      y_axis_type="linear",title="Stock Market Prices for GOOG",
+      x_axis_label='Date', y_axis_label='Price'
+  )
+
   js_resources = INLINE.render_js()
   css_resources = INLINE.render_css()
   script, div = components(p)
@@ -40,7 +47,6 @@ def text_button():
   from bokeh.layouts import row, widgetbox
   from bokeh.models import ColumnDataSource, DatetimeTickFormatter
   from bokeh.models.widgets import Slider, TextInput
-  from bokeh.plotting import figure
   import csv
   args = flask.request.args
   milk = args.get('milk') 
@@ -132,26 +138,4 @@ def text_button():
       x_axis_label='Date', y_axis_label='Price'
   )
 
-
-
-  js_resources = INLINE.render_js()
-  css_resources = INLINE.render_css()  
-  script, div = components(p)
-  html = flask.render_template(
-        'index.html',
-        plot_script=script,
-        plot_div=div,
-        js_resources=js_resources,
-        css_resources=css_resources,
-        _milk=milk,
-        _eggs=eggs,
-        _pnut=pnut,
-        _tnuts=tnuts,
-        _wheat=wheat,
-        _soy=soy,
-        _fish=fish,
-        _sfish=sfish,
-        _sesame=sesame
-       )
-  return encode_utf8(html)
 
