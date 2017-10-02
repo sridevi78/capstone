@@ -107,35 +107,8 @@ def main():
                     break
         return              
   elif request.method == 'GET':
-      from bokeh.resources import INLINE
-      from bokeh.embed import components
       from bokeh.util.string import encode_utf8
-      from bokeh.plotting import figure
-      p = figure(
-          tools="pan,box_zoom,reset,save",
-          y_axis_type="linear",title="Stock Market Prices for GOOG",
-          x_axis_label='Date', y_axis_label='Price'
-      )
+      return render_template('index.html')
       
-      js_resources = INLINE.render_js()
-      css_resources = INLINE.render_css()
-      script, div = components(p)
-      html = flask.render_template(
-            'index.html',
-            plot_script=script,
-            plot_div=div,
-            js_resources=js_resources,
-            css_resources=css_resources,
-            _milk,
-            _eggs,
-            _pnut,
-            _tnuts,
-            _wheat,
-            _soy,
-            _fish,
-            _sfish,
-            _sesame
-           )
-      return encode_utf8(html)
   
  
