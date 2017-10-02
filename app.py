@@ -10,7 +10,7 @@ def index():
   from bokeh.embed import components
   from bokeh.util.string import encode_utf8
   from bokeh.plotting import figure
-   p = figure(
+  p = figure(
       tools="pan,box_zoom,reset,save",
       y_axis_type="linear",title="Stock Market Prices for GOOG",
       x_axis_label='Date', y_axis_label='Price'
