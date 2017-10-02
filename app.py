@@ -107,7 +107,7 @@ def index():
         else:
             urls.append(rlink)
   print len(rcp_data)
-  #print urls
+  print urls
    
   p = figure(
       tools="pan,box_zoom,reset,save",
