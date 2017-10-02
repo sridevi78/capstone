@@ -9,8 +9,8 @@ def index():
   if request.method == 'POST':
       #print milk
       #print "that was milk"
-      print "inside post"
-      print "entered text_button"
+      #print "inside post"
+      #print "entered text_button"
       import numpy as np
       import pandas as pd
       import requests
@@ -45,8 +45,8 @@ def index():
       stopwords=[]
       if milk:
           stopwords.append(stop1)
-          print stopwords
-          print "those were stop words"
+          #print stopwords
+          #print "those were stop words"
       if eggs:
           stopwords.append(stop2)
       if pnut:
@@ -65,14 +65,14 @@ def index():
           stopwords.append(stop9)
       rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
       urls=[]
-      print stopwords
-      print "those were stopwords"
+      #print stopwords
+      #print "those were stopwords"
       for index,row in rcp_data.itertuples(index=True, name='Pandas'):
           row_list=str(row).split('[')
           info1=row_list[1].split(',')
-          for row in info1:
-              print row
-              print "that was the first split"
+          #for row in info1:
+           #   print row
+           #   print "that was the first split"
           info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
           title=info1[0].replace('"', "").strip()
           info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
@@ -97,12 +97,12 @@ def index():
                   flag=1
                   break
               else:
-                  print rlink
-                  print "that was a link"
+                  #print rlink
+                  #print "that was a link"
                   urls.append(rlink)
-              print flag
-              print "that was flag"    
-              print "***********"
+              #print flag
+              #print "that was flag"    
+              #print "***********"
           if flag == 1:
               continue 
           elif len(urls) >= 10:
