@@ -103,8 +103,8 @@ def index():
                   print "***********"
               if flag == 1:
                   continue 
-               elif len(urls) >= 10:
-                   break
+              elif len(urls) >= 10:
+                  break
       return              
   elif request.method == 'GET':
       return render_template('index.html')
