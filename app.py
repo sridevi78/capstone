@@ -143,4 +143,5 @@ def text_button():
     if flag == 1:
         continue 
     elif len(urls) >= 10:
-        break  
+        break
+  return  
