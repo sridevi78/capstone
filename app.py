@@ -20,18 +20,18 @@ def index():
       from bokeh.models import ColumnDataSource, DatetimeTickFormatter
       from bokeh.models.widgets import Slider, TextInput
       import csv
-      #args = flask.request.args
-      #milk = args.get('milk')
+      args = flask.request.args
+      milk = args.get('milk')
       print milk
       print "that was milk"
-      #eggs = args.get('eggs')
-      #pnut = args.get('peanuts')
-      #tnuts = args.get('treenuts')
-      #wheat = args.get('wheat')
-      #soy = args.get('soy')
-      #fish = args.get('fish')
-      #sfish = args.get('sfish')
-      #sesame = args.get('sesame')
+      eggs = args.get('eggs')
+      pnut = args.get('peanuts')
+      tnuts = args.get('treenuts')
+      wheat = args.get('wheat')
+      soy = args.get('soy')
+      fish = args.get('fish')
+      sfish = args.get('sfish')
+      sesame = args.get('sesame')
       stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
       stop2=['egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
       stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
@@ -109,16 +109,6 @@ def index():
               break
       return              
   elif request.method == 'GET':
-      args = flask.request.args
-      milk = args.get('milk')
-      eggs = args.get('eggs')
-      pnut = args.get('peanuts')
-      tnuts = args.get('treenuts')
-      wheat = args.get('wheat')
-      soy = args.get('soy')
-      fish = args.get('fish')
-      sfish = args.get('sfish')
-      sesame = args.get('sesame')      
       return render_template('index.html',_milk=milk,_eggs=eggs,_pnut=pnut,_tnuts=tnuts,_wheat=wheat,_soy=soy,_fish=fish,_sfish=sfish,_sesame=sesame)
   
 if __name__ == '__main__':
