@@ -64,6 +64,7 @@ def index():
       rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
       urls=[]
       print stopwords
+      print "those were stopwords"
       for index,row in rcp_data.itertuples(index=True, name='Pandas'):
           row_list=str(row).split('[')
           info1=row_list[1].split(',')
