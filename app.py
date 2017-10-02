@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST','GET'])
 def main():
-  if request.method == 'POST':
+  if request.method == 'GET':
         if request.form['submit'] == 'submit':
             print "entered text_button"
             import numpy as np
@@ -106,7 +106,7 @@ def main():
                 elif len(urls) >= 10:
                     break
         return              
-  elif request.method == 'GET':
+  elif request.method == 'POST':
       from bokeh.resources import INLINE
       from bokeh.embed import components
       from bokeh.util.string import encode_utf8
