@@ -64,10 +64,45 @@ def index():
 
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
   #for i in range(len(rcp_data)):
-  print rcp_data
-  print "***************" 
+  urls=[]
+  for index,row in rcp_data.itertuples(index=True, name='Pandas'):
+    row_list=str(row).split('[')
+    info1=row_list[1].split(',')
+    info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
+    title=info1[0].replace('"', "").strip()
+    #print(title)
+    #print("****************")
+    info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
+    chef=info1[1].replace('"', "").strip()
+    #print(chef)
+    #print("****************")
+    info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
+    rating=info1[2].replace('"', "").strip()
+    #print(rating)
+    #print("****************")
+    info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
+    review=info1[3].replace('"', "").strip()
+    #print(review)
+    #print("****************")
+    info1[4]=re.sub("[^a-z0-9. A-Z]+", "", info1[4])
+    cook_time=info1[4].replace('"', "").strip()
+    #print(cook_time)
+    #print("****************")
+    info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
+    level=info1[5].replace('"', "").strip()
+    #print(level)
+    #print("****************")
+    #print("***************************")
+    info2=row_list[2].split(']')
+    ing=info2[0]
+    rlink=info2[1].replace(",","").strip()
+    for word in ing:
+        if word in stop_words:
+            continue
+        else:
+            urls.append(rlink)
   print len(rcp_data)
-  
+  print urls
   p = figure(
      tools="pan,box_zoom,reset,save",
      y_axis_type="linear",title="",

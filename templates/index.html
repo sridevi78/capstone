@@ -83,8 +83,10 @@
         
         </fieldset>
         <br>
-        <div class="w3-row w3-padding-64" id="about">
-    <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <fieldset>
+        <legend>Preferences</legend>
+        <br>
+        <div class='input preferences'>
         <div class='input'>
         Cook Time
         <br>
@@ -96,24 +98,6 @@
         <option value="gt60" ulign="right">over an hour</option>
         </select>
         </div>
-    </div>
-    <div class="w3-col m6 w3-padding-large">
-        Rating
-        <br>
-        <select class='input' name="Item_2" align='center'>
-        <option value="ge4" ulign="right">4+ stars</option>
-        <option value="ge3" ulign="right">3+ stars</option>
-        <option value="ge2" ulign="right">2+ stars</option>
-        <option value="ge1" ulign="right">1+ stars</option>
-        <option value="ge0" ulign="right">0+ stars</option>
-        </select>
-    </div>
-    </div>
-        <br>
-        <fieldset>
-        <legend>Preferences</legend>
-        <br>
-        <div class='input preferences'>
         <div class='input'>
         Level
         <br>
@@ -123,7 +107,18 @@
         <option value="di" ulign="right">Difficult</option>
         </select>
         </div>
+        <div class='input'>
+        Rating
+        <br>
+        <select class='input' name="Item_2" align='center'>
+        <option value="ge4" ulign="right">4+ stars</option>
+        <option value="ge3" ulign="right">3+ stars</option>
+        <option value="ge2" ulign="right">2+ stars</option>
+        <option value="ge1" ulign="right">1+ stars</option>
+        <option value="ge0" ulign="right">0+ stars</option>
+        </select>
         </div>
+    </div>
         </fieldset>
         <br>
         <button type="submit" ualign="center">Submit</button>
