@@ -107,31 +107,9 @@ def index():
         else:
             urls.append(rlink)
   print len(rcp_data)
-  print urls
-  p = figure(
-     tools="pan,box_zoom,reset,save",
-     y_axis_type="linear",title="",
-     x_axis_label='Date', y_axis_label='Price'
-  )
-
-  # add a line renderer with legend and line thickness
-  #if milk:
-  #if eggs:
-  #if pnut:
-  #if tnuts:
-  #if wheat:
-  #if soy:
-  #if fish:
-  #if sfish:
-  #if sesame:
-
-  p.xaxis.formatter=DatetimeTickFormatter(
-          hours=["%d %B %Y"],
-          days=["%d %B %Y"],
-          months=["%d %B %Y"],
-          years=["%d %B %Y"],
-      )  
-  js_resources = INLINE.render_js()
+  #print urls
+   
+  js_resources = INLINE.render_j
   css_resources = INLINE.render_css()  
   script, div = components(p)
   html = flask.render_template(
