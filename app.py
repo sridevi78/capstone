@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST','GET'])
 def main():
-  if request.method == 'GET':
+  if request.method == 'POST':
         if request.form['submit'] == 'submit':
             print "entered text_button"
             import numpy as np
@@ -106,7 +106,7 @@ def main():
                 elif len(urls) >= 10:
                     break
         return              
-  elif request.method == 'POST':
+  elif request.method == 'GET':
       from bokeh.resources import INLINE
       from bokeh.embed import components
       from bokeh.util.string import encode_utf8
@@ -116,16 +116,7 @@ def main():
           y_axis_type="linear",title="Stock Market Prices for GOOG",
           x_axis_label='Date', y_axis_label='Price'
       )
-      args = flask.request.args
-      milk = args.get('milk')
-      eggs = args.get('eggs')
-      pnut = args.get('peanuts')
-      tnuts = args.get('treenuts')
-      wheat = args.get('wheat')
-      soy = args.get('soy')
-      fish = args.get('fish')
-      sfish = args.get('sfish')
-      sesame = args.get('sesame')
+      
       js_resources = INLINE.render_js()
       css_resources = INLINE.render_css()
       script, div = components(p)
@@ -135,15 +126,15 @@ def main():
             plot_div=div,
             js_resources=js_resources,
             css_resources=css_resources,
-            _milk=milk,
-            _eggs=eggs,
-            _pnut=pnut,
-            _tnuts=tnuts,
-            _wheat=wheat,
-            _soy=soy,
-            _fish=fish,
-            _sfish=sfish,
-            _sesame=sesame
+            _milk,
+            _eggs,
+            _pnut,
+            _tnuts,
+            _wheat,
+            _soy,
+            _fish,
+            _sfish,
+            _sesame
            )
       return encode_utf8(html)
   
