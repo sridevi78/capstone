@@ -109,7 +109,7 @@ def index():
               break
       return              
   elif request.method == 'GET':
-      return render_template('index.html',_milk=milk,_eggs=eggs,_pnut=pnut,_tnuts=tnuts,_wheat=wheat,_soy=soy,_fish=fish,_sfish=sfish,_sesame=sesame)
+      return render_template('index.html')
   
 if __name__ == '__main__':
   app.run(port=33507) 
