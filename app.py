@@ -111,7 +111,7 @@ def index():
    
   p = figure(
       tools="pan,box_zoom,reset,save",
-      y_axis_type="linear",title="Stock Market Prices for  %s" %tick,
+      y_axis_type="linear",title="Stock Market Prices for GOOG",
       x_axis_label='Date', y_axis_label='Price'
   )
 
