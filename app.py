@@ -95,7 +95,6 @@ def index():
     #print("****************")
     #print("***************************")
     info2=row_list[2].split(']')
-    print info2[1]
     ing=info2[0]
     try:
         rlink=info2[1].replace(",","").strip()
