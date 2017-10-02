@@ -46,20 +46,20 @@ def main():
                 print "those were stop words"
             if eggs:
                 stopwords.append(stop2)
-            if pnut
+            if pnut:
                 stopwords.append(stop3)
             if tnuts:
-               stopwords.append(stop4)
+                stopwords.append(stop4)
             if wheat:
-               stopwords.append(stop5)
+                stopwords.append(stop5)
             if soy:
-               stopwords.append(stop6)
+                stopwords.append(stop6)
             if fish:
-               stopwords.append(stop7)
+                stopwords.append(stop7)
             if sfish:
-               stopwords.append(stop8)
+                stopwords.append(stop8)
             if sesame:
-               stopwords.append(stop9)
+                stopwords.append(stop9)
 
  
 
