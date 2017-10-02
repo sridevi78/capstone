@@ -3,10 +3,10 @@ import flask
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('text_button', methods=['GET', 'POST'])
 
 
-def index():
+def text_button():
   import numpy as np
   import pandas as pd
   import requests
