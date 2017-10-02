@@ -98,7 +98,7 @@ def index():
     ing=info2[0]
     rlink=info2[1].replace(",","").strip()
     for word in ing:
-        if word in stop_words:
+        if word in stopwords:
             continue
         else:
             urls.append(rlink)
