@@ -48,6 +48,7 @@ def index():
 
 @app.route('/text_button', methods=['POST'])
 def text_button():
+  print "entered text_button"
   import numpy as np
   import pandas as pd
   import requests
