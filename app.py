@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+  from bokeh.resources import INLINE
   js_resources = INLINE.render_js()
   css_resources = INLINE.render_css()
   script, div = components(p)
@@ -39,7 +40,6 @@ def text_button():
   from bokeh.models.widgets import Slider, TextInput
   from bokeh.plotting import figure
   from bokeh.embed import components
-  from bokeh.resources import INLINE
   from bokeh.util.string import encode_utf8
   import csv
   args = flask.request.args
