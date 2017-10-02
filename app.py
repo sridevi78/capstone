@@ -42,8 +42,8 @@ def index():
       stopwords=[]
       if milk:
           stopwords.append(stop1)
-              print stopwords
-              print "those were stop words"
+          print stopwords
+          print "those were stop words"
       if eggs:
           stopwords.append(stop2)
       if pnut:
