@@ -126,18 +126,17 @@ def text_button():
     except:
         continue
     flag=0
-    print rlink
     for word in ing:
         if word in stopwords:
             flag=1
             break
         else:
+            print rlink
+            print "that was a link"
             urls.append(rlink)
     print flag
     print "***********"
     if flag == 1:
         continue 
     elif len(urls) >= 10:
-        break
-  print urls
-     
+        break  
