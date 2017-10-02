@@ -101,14 +101,18 @@ def index():
         rlink=info2[1].replace(",","").strip()
     except:
         continue
-
+    flag=0
     for word in ing:
         if word in stopwords:
-            continue
+            flag=1
+            break
         else:
+            #print rllink
             urls.append(rlink)
-    print len(urls)
-    if len(urls) >= 10:
+            #print len(urls)
+    if flag == 1:
+        continue 
+    elif len(urls) >= 10:
         #print urls
         break
   print len(rcp_data)
