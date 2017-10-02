@@ -109,7 +109,7 @@ def index():
             urls.append(rlink)
     print len(urls)
     if len(urls) >= 10:
-        print urls
+        #print urls
         break
   print len(rcp_data)
      
