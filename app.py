@@ -66,6 +66,7 @@ def index():
 
   rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
   urls=[]
+  
   for index,row in rcp_data.itertuples(index=True, name='Pandas'):
     row_list=str(row).split('[')
     info1=row_list[1].split(',')
@@ -88,12 +89,15 @@ def index():
     except:
         continue
     flag=0
+    print rlink
     for word in ing:
         if word in stopwords:
             flag=1
             break
         else:
             urls.append(rlink)
+    print flag
+    print "***********"
     if flag == 1:
         continue 
     elif len(urls) >= 10:
