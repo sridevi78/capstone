@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST','GET'])
 def main():
   if request.method == 'POST':
-        if request.form['submit'] == 'Do Something':
+        if request.form['submit'] == 'submit':
             print "entered text_button"
             import numpy as np
             import pandas as pd
