@@ -9,6 +9,7 @@ def index():
   if request.method == 'POST':
       print "inside post"
       print request.form['submit']
+      print "that was that"
       if request.form['submit'] == ' ':
           print "entered text_button"
           import numpy as np
