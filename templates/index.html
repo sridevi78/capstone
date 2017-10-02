@@ -44,13 +44,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     
     <form name="text_button" method='GET'>
         <br>
         <br>
         <fieldset>
+        
         <legend>Allergic to:</legend>
         <input type="checkbox" name="milk" value="_milk" ulign="left" unchecked>
         Milk
@@ -79,12 +80,14 @@
         <input type="checkbox" name="sesame" value="_sesame" ulign="left" unchecked>
         Sesame
         <br>
+        
         </fieldset>
         <br>
         <br>
         <fieldset>
         <legend>Preferences</legend>
         <br>
+        <div>
         Cook Time
         <br>
         <select name="Item_1">
@@ -94,7 +97,9 @@
         <option value="le60" ulign="right">under 60 minutes</option>
         <option value="gt60" ulign="right">over an hour</option>
         </select>
+        </div>
         <br>
+        <div>
         Rating
         <br>
         <select name="Item_2">
@@ -104,7 +109,9 @@
         <option value="ge1" ulign="right">1+ stars</option>
         <option value="ge0" ulign="right">0+ stars</option>
         </select>
+        </div>
         <br>
+        <div>
         Level
         <br>
         <select name="Item_3">
@@ -112,6 +119,7 @@
         <option value="me" ulign="right">Medium</option>         
         <option value="di" ulign="right">Difficult</option>
         </select>
+        </div>
         </fieldset>
         <br>
         <button type="submit" ualign="center">Submit</button>
