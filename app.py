@@ -3,7 +3,7 @@ import flask
 
 app = Flask(__name__)
 
-@app.route('text_button', methods=['GET', 'POST'])
+@app.route('/text_button', methods=['GET', 'POST'])
 
 
 def text_button():
