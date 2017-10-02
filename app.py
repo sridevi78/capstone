@@ -113,9 +113,9 @@ def index():
     if flag == 1:
         continue 
     elif len(urls) >= 10:
-        print urls
+        #print urls
         break
-  print len(rcp_data)
+  print urls
      
   p = figure(
       tools="pan,box_zoom,reset,save",
