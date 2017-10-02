@@ -109,10 +109,10 @@ def index():
   print len(rcp_data)
   #print urls
    
-   p = figure(
-     tools="pan,box_zoom,reset,save",
-     y_axis_type="linear",title="Stock Market Prices for  %s" %tick,
-     x_axis_label='Date', y_axis_label='Price'
+  p = figure(
+      tools="pan,box_zoom,reset,save",
+      y_axis_type="linear",title="Stock Market Prices for  %s" %tick,
+      x_axis_label='Date', y_axis_label='Price'
   )
 
 
