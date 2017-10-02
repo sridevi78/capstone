@@ -108,8 +108,8 @@ def main():
                   break
       return              
   elif request.method == 'GET':
-      from bokeh.util.string import encode_utf8
       return render_template('index.html')
       
   
- 
+if __name__ == '__main__':
+  app.run(port=33507) 
