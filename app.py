@@ -101,8 +101,8 @@ def index():
                   print flag
                   print "that was flag"    
                   print "***********"
-               if flag == 1:
-                   continue 
+              if flag == 1:
+                  continue 
                elif len(urls) >= 10:
                    break
       return              
