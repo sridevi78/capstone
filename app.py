@@ -109,7 +109,7 @@ def index():
   print len(rcp_data)
   #print urls
    
-  js_resources = INLINE.render_j
+  js_resources = INLINE.render_js()
   css_resources = INLINE.render_css()  
   script, div = components(p)
   html = flask.render_template(
