@@ -107,10 +107,10 @@ def index():
         else:
             urls.append(rlink)
     if len(urls) >= 10:
+        print urls
         break
   print len(rcp_data)
-  print urls
-   
+     
   p = figure(
       tools="pan,box_zoom,reset,save",
       y_axis_type="linear",title="Stock Market Prices for GOOG",
