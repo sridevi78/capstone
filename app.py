@@ -10,6 +10,7 @@ def index():
   import numpy as np
   import pandas as pd
   import requests
+  import re
   from datetime import datetime
   from bokeh.layouts import row, widgetbox
   from bokeh.models import ColumnDataSource, DatetimeTickFormatter
