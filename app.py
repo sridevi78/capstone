@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route('/', methods=['POST','GET'])
 def index():
   if request.method == 'POST':
-      print milk
-      print "that was milk"
+      #print milk
+      #print "that was milk"
       print "inside post"
       print "entered text_button"
       import numpy as np
