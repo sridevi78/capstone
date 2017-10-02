@@ -15,7 +15,16 @@ def index():
       y_axis_type="linear",title="Stock Market Prices for GOOG",
       x_axis_label='Date', y_axis_label='Price'
   )
-
+  args = flask.request.args
+  milk = args.get('milk')
+  eggs = args.get('eggs')
+  pnut = args.get('peanuts')
+  tnuts = args.get('treenuts')
+  wheat = args.get('wheat')
+  soy = args.get('soy')
+  fish = args.get('fish')
+  sfish = args.get('sfish')
+  sesame = args.get('sesame')
   js_resources = INLINE.render_js()
   css_resources = INLINE.render_css()
   script, div = components(p)
