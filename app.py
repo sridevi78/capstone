@@ -44,6 +44,7 @@ def index():
   stopwords=[]
   if milk:
      stopwords.append(stop1)
+     print stopwords
   if eggs:
      stopwords.append(stop2)
   if pnut:
@@ -106,6 +107,7 @@ def index():
             continue
         else:
             urls.append(rlink)
+    print len(urls)
     if len(urls) >= 10:
         print urls
         break
