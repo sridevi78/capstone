@@ -97,7 +97,11 @@ def index():
     info2=row_list[2].split(']')
     print info2[1]
     ing=info2[0]
-    rlink=info2[1].replace(",","").strip()
+    try:
+        rlink=info2[1].replace(",","").strip()
+    except:
+        continue
+
     for word in ing:
         if word in stopwords:
             continue
