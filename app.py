@@ -3,9 +3,31 @@ import flask
 
 app = Flask(__name__)
 
-@app.route('/text_button', methods=['GET', 'POST'])
 
+@app.route("/")
+def index():
+  js_resources = INLINE.render_js()
+  css_resources = INLINE.render_css()
+  script, div = components(p)
+  html = flask.render_template(
+        'index.html',
+        plot_script=script,
+        plot_div=div,
+        js_resources=js_resources,
+        css_resources=css_resources,
+        _milk=milk,
+        _eggs=eggs,
+        _pnut=pnut,
+        _tnuts=tnuts,
+        _wheat=wheat,
+        _soy=soy,
+        _fish=fish,
+        _sfish=sfish,
+        _sesame=sesame
+       )
+  return encode_utf8(html)    
 
+@app.route('/text_button', methods=['POST'])
 def text_button():
   import numpy as np
   import pandas as pd
