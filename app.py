@@ -106,6 +106,16 @@ def index():
               break
       return              
   elif request.method == 'GET':
+      args = flask.request.args
+      milk = args.get('milk')
+      eggs = args.get('eggs')
+      pnut = args.get('peanuts')
+      tnuts = args.get('treenuts')
+      wheat = args.get('wheat')
+      soy = args.get('soy')
+      fish = args.get('fish')
+      sfish = args.get('sfish')
+      sesame = args.get('sesame')      
       return render_template('index.html',_milk=milk,_eggs=eggs,_pnut=pnut,_tnuts=tnuts,_wheat=wheat,_soy=soy,_fish=fish,_sfish=sfish,_sesame=sesame)
   
 if __name__ == '__main__':
