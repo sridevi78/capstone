@@ -82,6 +82,7 @@ def text_button():
   if milk:
      stopwords.append(stop1)
      print stopwords
+     print "those were stop words"
   if eggs:
      stopwords.append(stop2)
   if pnut:
@@ -107,6 +108,9 @@ def text_button():
   for index,row in rcp_data.itertuples(index=True, name='Pandas'):
     row_list=str(row).split('[')
     info1=row_list[1].split(',')
+    for row in info1:
+        print row
+    print "that was the first split"
     info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
     title=info1[0].replace('"', "").strip()
     info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
