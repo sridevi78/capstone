@@ -75,8 +75,8 @@ def index():
             #print "inside the for loop"
             row_list=str(row).split('[')
             info1=row_list[1].split(',')
-            #print info1
-            #print "that was info1"
+            print info1
+            print "that was info1"
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
             title=info1[0].replace('"', "").strip()
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
@@ -90,8 +90,8 @@ def index():
             info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
             level=info1[5].replace('"', "").strip()
             info2=row_list[2].split(']')
-            #print info2
-            #print "that was info2"
+            print info2
+            print "that was info2"
             ing=info2[0]
             try:
                 rlink=info2[1].replace(",","").strip()
@@ -107,7 +107,7 @@ def index():
             if flag == 1:
                 continue
             elif len(urls) >= 10:
-                print urls
+                #print urls
                 break
     print "reached end"
     p = figure(
