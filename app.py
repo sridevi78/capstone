@@ -108,7 +108,7 @@ def index():
             #print rlink
             flag=0
             for word in ing:
-                if word in stopwords and flag=0:
+                if word in stopwords and flag==0:
                     flag=1
             if flag == 1:
                 continue
