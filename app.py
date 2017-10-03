@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect,flask_wtf
+from flask import Flask, render_template, request, redirect
 import flask
 from flask_wtf import Form
 from wtforms import SubmitField
