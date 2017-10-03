@@ -99,6 +99,7 @@ def index():
                 continue
             elif len(urls) >= 10:
                 break
+    print "reached end"
     html=render_template('index.html',_milk=milk,_eggs=eggs,_pnut=pnut,_tnuts=tnuts,_wheat=wheat,_soy=soy,_fish=fish,_sfish=sfish,_sesame=sesame)
     return encode_utf8(html)
     
