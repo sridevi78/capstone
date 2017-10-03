@@ -104,19 +104,7 @@ def index():
     
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
-    html = flask.render_template('index.html',
-                                 js_resources=js_resources,
-                                 css_resources=css_resources,
-                                 _milk=milk,
-                                 _eggs=eggs,
-                                 _pnut=pnut,
-                                 _tnuts=tnuts,
-                                 _wheat=wheat,
-                                 _soy=soy,
-                                 _fish=fish,
-                                 _sfish=sfish,
-                                 _sesame=sesame
-                               )
+    html = flask.render_template('index.html')
     return encode_utf8(html)  
 
 
