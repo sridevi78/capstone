@@ -99,7 +99,7 @@ def index():
                 continue
             elif len(urls) >= 10:
                 break
-    html= render_template('index.html')
+    html=render_template('index.html')
     return encode_utf8(html)
     
 
