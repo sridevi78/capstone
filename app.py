@@ -80,7 +80,7 @@ def index():
             #print index,row
             #print ind
             row1=rcp_data.iloc[ind]
-            print row1
+            #print row1
             row_list=str(row1).split('[')
             #print row_list
             info1=row_list[1].split(',')
