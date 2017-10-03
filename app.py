@@ -74,13 +74,14 @@ def index():
         #print len(rcp_data.itertuples(name='Pandas'))
         #print range(len(rcp_data))
         #urls=[]
+        print rcp_data.iloc[:10]
         for ind in range(len(rcp_data)): 
             #rcp_data.itertuples(name='Pandas'):
             #print "inside the for loop"
             #print index,row
             #print ind
             row1=rcp_data.iloc[ind]
-            #print row1
+            print row1
             row_list=str(row1).split('[')
             #print row_list
             info1=row_list[1].split(',')
