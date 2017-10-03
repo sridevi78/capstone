@@ -58,6 +58,7 @@ def index():
       
       urls=[]
       for index,row in rcp_data.itertuples(index=True, name='Pandas'):
+          print "inside the for loop"
           row_list=str(row).split('[')
           info1=row_list[1].split(',')
           print info1
