@@ -40,6 +40,7 @@ def index():
           stopwords.append(stop1)
       if eggs:
           stopwords.append(stop2)
+          print stopwords
       if pnut:
           stopwords.append(stop3)
       if tnuts:
@@ -55,7 +56,7 @@ def index():
       if sesame:
           stopwords.append(stop9)
       rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-      print stopwords 
+       
       urls=[]
       for index,row in rcp_data.itertuples(index=True, name='Pandas'):
           print "inside the for loop"
