@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
+  if milk:
     print "submit pressed"
     import numpy as np
     import pandas as pd
@@ -101,10 +102,14 @@ def index():
                 continue 
             elif len(urls) >= 10:
                 break
-    
+    return "OK"
+  else:  
+    print "displaying form"
+    from bokeh.util.string import encode_utf8
+    from bokeh.resources import INLINE
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
-    html = flask.render_template('index.html')
+    html = flask.render_template('index.html',js_resources=js_resources,css_resources=css_resources)
     return encode_utf8(html)  
 
 
