@@ -73,7 +73,8 @@ def index():
         csv_f = csv.reader(f)
         rcp_data=[]
         for row in csv_f:
-            rcp_data.append(row)                                                                                                                                                       for ind in range(len(rcp_data)): 
+            rcp_data.append(row)
+        for ind in range(len(rcp_data)): 
             row1=rcp_data.iloc[ind]
             print row1
             row_list=str(row1).split('[')
