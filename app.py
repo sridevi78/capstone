@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
+    url=[]
     import numpy as np
     import pandas as pd
     import requests
@@ -71,7 +72,7 @@ def index():
         print stopwords
         rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
         #print len(rcp_data.itertuples(name='Pandas'))
-        urls=[]
+        print rcp_data.iloc[:10]
         for ind in range(len(rcp_data)): 
             #rcp_data.itertuples(name='Pandas'):
             #print "inside the for loop"
@@ -114,7 +115,7 @@ def index():
                 continue
             if len(urls) >= 10:
                 break
-        print urls       
+        #print urls       
     print "reached end"
     p = figure(
         tools="pan,box_zoom,reset,save",
