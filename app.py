@@ -4,7 +4,7 @@ import flask
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/')
 def index():
   if request.method == 'POST':
       import numpy as np
