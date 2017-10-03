@@ -76,7 +76,7 @@ def index():
             #rcp_data.itertuples(name='Pandas'):
             #print "inside the for loop"
             #print index,row
-            row=rcp_data[ind]
+            row=rcp_data.iloc[ind]
             row_list=str(row).split('[')
             info1=row_list[1].split(',')
             #print info1
