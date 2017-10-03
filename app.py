@@ -113,10 +113,10 @@ def index():
         x_axis_label='Date', y_axis_label='Price'
     )
 
-     js_resources = INLINE.render_js()
-     css_resources = INLINE.render_css()
-     script, div = components(p)
-     html = flask.render_template(
+    js_resources = INLINE.render_js()
+    css_resources = INLINE.render_css()
+    script, div = components(p)
+    html = flask.render_template(
            'index.html',
            plot_script=script,
            plot_div=div,
@@ -132,7 +132,7 @@ def index():
            _sfish=sfish,
            _sesame=sesame
           )
-     return encode_utf8(html)
+    return encode_utf8(html)
 
 
 
