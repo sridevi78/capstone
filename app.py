@@ -80,6 +80,7 @@ def index():
             print row1
             row_list=str(row1).split('[')
             info1=row_list[1].split(',')
+            print info1
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
             title=info1[0].replace('"', "").strip()
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
@@ -93,6 +94,7 @@ def index():
             info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
             level=info1[5].replace('"', "").strip()
             info2=row_list[2].split(']')
+            print info2
             ing=info2[0]
             try:
                 rlink=info2[1].replace(",","").strip()
