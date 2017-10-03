@@ -17,7 +17,11 @@ def index():
       from bokeh.models.widgets import Slider, TextInput
       import csv
       milk = request.form['milk']
+      print milk
+      print "that was milk"
       eggs = request.form['eggs']
+      print eggs
+      print "that was eggs"
       pnut = request.form['peanuts']
       tnuts = request.form['treenuts']
       wheat = request.form['wheat']
