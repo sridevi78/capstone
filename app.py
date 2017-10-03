@@ -25,6 +25,12 @@ def index():
       fish = request.form['fish']
       sfish = request.form['sfish']
       sesame = request.form['sesame']
+      item1=request.form['Item_1']
+      item2=request.form['Item_2']
+      item3=request.form['Item_3']
+      print item1
+      print item2
+      print item2
       stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
       stop2=['egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
       stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
