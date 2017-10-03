@@ -66,7 +66,7 @@ def index():
         stopwords.append(stop8)
     if sesame:
         stopwords.append(stop9)
-    if stop_words:
+    if stopwords:
         rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
         urls=[]
         for index,row in rcp_data.itertuples(index=True, name='Pandas'):
