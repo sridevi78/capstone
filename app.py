@@ -17,17 +17,14 @@ def index():
       from bokeh.models.widgets import Slider, TextInput
       import csv
       milk = request.form['milk']
-      args = flask.request.args
-      #milk = args.get('milk')
-      print milk
-      eggs = args.get('eggs')
-      pnut = args.get('peanuts')
-      tnuts = args.get('treenuts')
-      wheat = args.get('wheat')
-      soy = args.get('soy')
-      fish = args.get('fish')
-      sfish = args.get('sfish')
-      sesame = args.get('sesame')
+      eggs = request.form['eggs']
+      pnut = request.form['peanuts']
+      tnuts = request.form['treenuts']
+      wheat = request.form['wheat']
+      soy = request.form['soy']
+      fish = request.form['fish']
+      sfish = request.form['sfish']
+      sesame = request.form['sesame']
       stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
       stop2=['egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
       stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
@@ -58,12 +55,13 @@ def index():
       if sesame:
           stopwords.append(stop9)
       rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-      print stopwords
-      print "those were stopwords"
+      
       urls=[]
       for index,row in rcp_data.itertuples(index=True, name='Pandas'):
           row_list=str(row).split('[')
           info1=row_list[1].split(',')
+          print info1
+          print "that was info1"
           info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
           title=info1[0].replace('"', "").strip()
           info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
@@ -77,6 +75,8 @@ def index():
           info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
           level=info1[5].replace('"', "").strip()
           info2=row_list[2].split(']')
+          print info2
+          print "that was info2"
           ing=info2[0]
           try:
               rlink=info2[1].replace(",","").strip()
