@@ -73,6 +73,7 @@ def index():
         urls=[]
         for index,row in rcp_data.itertuples(index=True, name='Pandas'):
             #print "inside the for loop"
+            print index,row
             row_list=str(row).split('[')
             info1=row_list[1].split(',')
             #print info1
@@ -92,13 +93,13 @@ def index():
             info2=row_list[2].split(']')
             #print info2
             #print "that was info2"
-            print title,chef,rating,cook_time,level
+            #print title,chef,rating,cook_time,level
             ing=info2[0]
             try:
                 rlink=info2[1].replace(",","").strip()
             except:
                 continue
-            print rlink
+            #print rlink
             flag=0
             for word in ing:
                 if word in stopwords:
