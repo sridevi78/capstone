@@ -114,7 +114,7 @@ def index():
                 continue
             if len(urls) >= 10:
                 break
-    print urls       
+        print urls       
     print "reached end"
     p = figure(
         tools="pan,box_zoom,reset,save",
