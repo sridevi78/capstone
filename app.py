@@ -16,8 +16,9 @@ def index():
       from bokeh.models import ColumnDataSource, DatetimeTickFormatter
       from bokeh.models.widgets import Slider, TextInput
       import csv
+      milk = request.form['milk']
       args = flask.request.args
-      milk = args.get('milk')
+      #milk = args.get('milk')
       print milk
       eggs = args.get('eggs')
       pnut = args.get('peanuts')
