@@ -132,8 +132,6 @@ def index():
     #script, div = components(p)
     html = flask.render_template(
            'index.html',
-           #plot_script=script,
-           #plot_div=div,
            js_resources=js_resources,
            css_resources=css_resources,
            _milk=milk,
