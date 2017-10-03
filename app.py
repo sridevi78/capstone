@@ -69,24 +69,15 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stopwords:
-        #print stopwords
-        rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-        #print len(rcp_data.itertuples(name='Pandas'))
-        #print range(len(rcp_data))
-        #urls=[]
-        print rcp_data.iloc[:10]
-        for ind in range(len(rcp_data)): 
-            #rcp_data.itertuples(name='Pandas'):
-            #print "inside the for loop"
-            #print index,row
-            #print ind
+        f = open('recipe_data1.csv')
+        csv_f = csv.reader(f)
+        rcp_data=[]
+        for row in csv_f:
+            rcp_data.append(row)                                                                                                                                                       for ind in range(len(rcp_data)): 
             row1=rcp_data.iloc[ind]
             print row1
             row_list=str(row1).split('[')
-            #print row_list
             info1=row_list[1].split(',')
-            #print info1
-            #print "that was info1"
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
             title=info1[0].replace('"', "").strip()
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
@@ -100,17 +91,11 @@ def index():
             info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
             level=info1[5].replace('"', "").strip()
             info2=row_list[2].split(']')
-            #print info2
-            #print "that was info2"
-            #print title,chef,rating,cook_time,level
             ing=info2[0]
-            #print info2[1]
-            #print "that was info2[1]"
             try:
                 rlink=info2[1].replace(",","").strip()
             except:
                 continue
-            #print rlink
             flag=0
             for word in ing:
                 if word in stopwords and flag==0:
@@ -118,13 +103,10 @@ def index():
             if flag == 1:
                 continue
             else:
-                #print rlink
-                urls.append(rlink)
-    #print urls[:10]       
+                urls.append(rlink)       
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
-    #script, div = components(p)
     html = flask.render_template(
            'index.html',
            js_resources=js_resources,
