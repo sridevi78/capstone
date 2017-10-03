@@ -59,48 +59,46 @@ def index():
       #print stopwords
       #print "those were stopwords"
       #print "*********************"
-
-    rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-
-       
-    urls=[]
-    for index,row in rcp_data.itertuples(index=True, name='Pandas'):
-          #print "inside the for loop"
-        row_list=str(row).split('[')
-        info1=row_list[1].split(',')
-          #print info1
-          #print "that was info1"
-        info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
-        title=info1[0].replace('"', "").strip()
-        info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
-        chef=info1[1].replace('"', "").strip() 
-        info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
-        rating=info1[2].replace('"', "").strip()
-        info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
-        review=info1[3].replace('"', "").strip()
-        info1[4]=re.sub("[^a-z0-9. A-Z]+", "", info1[4])
-        cook_time=info1[4].replace('"', "").strip()
-        info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
-        level=info1[5].replace('"', "").strip()
-        info2=row_list[2].split(']')
-        #print info2
-        #print "that was info2"
-        ing=info2[0]
-        try:
-            rlink=info2[1].replace(",","").strip()
-        except:
-            continue
-        flag=0
-        for word in ing:
-            if word in stopwords:
-                flag=1
+    if stop_words:
+        rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")    
+        urls=[]
+        for index,row in rcp_data.itertuples(index=True, name='Pandas'):
+            #print "inside the for loop"
+            row_list=str(row).split('[')
+            info1=row_list[1].split(',')
+            #print info1
+            #print "that was info1"
+            info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
+            title=info1[0].replace('"', "").strip()
+            info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
+            chef=info1[1].replace('"', "").strip() 
+            info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
+            rating=info1[2].replace('"', "").strip()
+            info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
+            review=info1[3].replace('"', "").strip()
+            info1[4]=re.sub("[^a-z0-9. A-Z]+", "", info1[4])
+            cook_time=info1[4].replace('"', "").strip()
+            info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
+            level=info1[5].replace('"', "").strip()
+            info2=row_list[2].split(']')
+            #print info2
+            #print "that was info2"
+            ing=info2[0]
+            try:
+                rlink=info2[1].replace(",","").strip()
+            except:
+                continue
+            flag=0
+            for word in ing:
+                if word in stopwords:
+                    flag=1
+                    break
+                else:
+                    urls.append(rlink)
+            if flag == 1:
+                continue 
+            elif len(urls) >= 10:
                 break
-            else:
-                urls.append(rlink)
-        if flag == 1:
-            continue 
-        elif len(urls) >= 10:
-            break
     html = flask.render_template('index.html')
     return encode_utf8(html)  
 
