@@ -101,6 +101,8 @@ def index():
             #print "that was info2"
             #print title,chef,rating,cook_time,level
             ing=info2[0]
+            print info2[1]
+            print "that was info2[1]"
             try:
                 rlink=info2[1].replace(",","").strip()
             except:
@@ -113,7 +115,7 @@ def index():
             if flag == 1:
                 continue
             else:
-                print rlink
+                #print rlink
                 urls.append(rlink)
     #print urls[:10]       
     print "reached end"
