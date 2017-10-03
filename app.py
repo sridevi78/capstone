@@ -37,7 +37,7 @@ def index():
 
     print item1
     print item2
-    print item2
+    print item3
     stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
     stop2=['egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
     stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
@@ -68,6 +68,7 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stopwords:
+        print stopwords
         rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
         urls=[]
         for index,row in rcp_data.itertuples(index=True, name='Pandas'):
