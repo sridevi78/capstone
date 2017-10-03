@@ -76,7 +76,7 @@ def index():
         for row in csv_f:
             rcp_data.append(row)
         for ind in range(len(rcp_data)): 
-            row1=rcp_data.iloc[ind]
+            row1=rcp_data[ind]
             print row1
             row_list=str(row1).split('[')
             info1=row_list[1].split(',')
