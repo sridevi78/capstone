@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 def index():
   if request.method == 'GET' and request.form['milk']:
+    print "submit pressed"
     import numpy as np
     import pandas as pd
     import requests
@@ -103,6 +104,7 @@ def index():
                 break
     return OK
   elif request.method == GET:
+    print "form displayed"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
     html = flask.render_template('index.html',
