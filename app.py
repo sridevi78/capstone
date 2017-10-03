@@ -112,9 +112,9 @@ def index():
                     urls.append(rlink)
             if flag == 1:
                 continue
-            elif len(urls) >= 10:
-                print urls
+            if len(urls) >= 10:
                 break
+    print urls       
     print "reached end"
     p = figure(
         tools="pan,box_zoom,reset,save",
