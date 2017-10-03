@@ -107,6 +107,7 @@ def index():
             if flag == 1:
                 continue
             elif len(urls) >= 10:
+                print urls
                 break
     print "reached end"
     p = figure(
