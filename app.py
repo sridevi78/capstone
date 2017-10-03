@@ -72,9 +72,11 @@ def index():
         rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
         print len(rcp_data.itertuples(name='Pandas'))
         urls=[]
-        for row in rcp_data.itertuples(name='Pandas'):
+        for ind in range(len(rcp_data)): 
+            #rcp_data.itertuples(name='Pandas'):
             #print "inside the for loop"
             #print index,row
+            row=rcp_data[ind]
             row_list=str(row).split('[')
             info1=row_list[1].split(',')
             #print info1
