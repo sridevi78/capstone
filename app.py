@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
+    print "entered"
     if request.form['submit']:
         print "submit pressed"
         import numpy as np
@@ -101,8 +102,8 @@ def index():
                 elif len(urls) >= 10:
                     break
     else:
-        return render_template('index.html')
-    
+        html= render_template('index.html')
+        return encode_utf8(html)
     
 
 if __name__ == '__main__':
