@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import flask
-from flask_wtf import FlaskForm
+from flask import FlaskForm
 from wtforms import SubmitField
 app = Flask(__name__)
 
