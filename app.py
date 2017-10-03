@@ -18,6 +18,7 @@ def index():
       import csv
       args = flask.request.args
       milk = args.get('milk')
+      print milk
       eggs = args.get('eggs')
       pnut = args.get('peanuts')
       tnuts = args.get('treenuts')
