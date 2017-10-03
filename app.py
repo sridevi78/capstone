@@ -70,7 +70,7 @@ def index():
     if stopwords:
         print stopwords
         rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
-        print len(rcp_data.itertuples(name='Pandas'))
+        #print len(rcp_data.itertuples(name='Pandas'))
         urls=[]
         for ind in range(len(rcp_data)): 
             #rcp_data.itertuples(name='Pandas'):
