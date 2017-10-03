@@ -79,8 +79,11 @@ def index():
             row1=rcp_data[ind]
             print row1
             row_list=str(row1).split('[')
+            print row_list
+            print "split by ["
             info1=row_list[1].split(',')
             print info1
+            print "second element split by ,"
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
             title=info1[0].replace('"', "").strip()
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
