@@ -121,19 +121,19 @@ def index():
                 urls.append(rlink)
     #print urls[:10]       
     print "reached end"
-    p = figure(
+"""    p = figure(
         tools="pan,box_zoom,reset,save",
         y_axis_type="linear",title="Stock Market Prices for  GOOG",
         x_axis_label='Date', y_axis_label='Price'
     )
-
+"""
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
-    script, div = components(p)
+    #script, div = components(p)
     html = flask.render_template(
            'index.html',
-           plot_script=script,
-           plot_div=div,
+           #plot_script=script,
+           #plot_div=div,
            js_resources=js_resources,
            css_resources=css_resources,
            _milk=milk,
