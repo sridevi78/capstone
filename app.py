@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
-    url=[]
+    urls=[]
     import numpy as np
     import pandas as pd
     import requests
@@ -73,6 +73,7 @@ def index():
         rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
         #print len(rcp_data.itertuples(name='Pandas'))
         print rcp_data.iloc[:10]
+        #urls=[]
         for ind in range(len(rcp_data)): 
             #rcp_data.itertuples(name='Pandas'):
             #print "inside the for loop"
