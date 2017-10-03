@@ -108,13 +108,12 @@ def index():
             for word in ing:
                 if word in stopwords:
                     flag=1
-                    break
                 else:
                     urls.append(rlink)
             if flag == 1:
                 continue
             elif len(urls) >= 10:
-                #print urls
+                print urls
                 break
     print "reached end"
     p = figure(
