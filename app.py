@@ -72,7 +72,7 @@ def index():
         print stopwords
         rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
         #print len(rcp_data.itertuples(name='Pandas'))
-        print rcp_data.iloc[:10]
+        print range(len(rcp_data))
         #urls=[]
         for ind in range(len(rcp_data)): 
             #rcp_data.itertuples(name='Pandas'):
@@ -108,15 +108,13 @@ def index():
             #print rlink
             flag=0
             for word in ing:
-                if word in stopwords:
+                if word in stopwords and flag=0:
                     flag=1
-                else:
-                    urls.append(rlink)
             if flag == 1:
                 continue
-            if len(urls) >= 10:
-                break
-        #print urls       
+            else:
+                urls.append(rlink)
+    print urls[:10]       
     print "reached end"
     p = figure(
         tools="pan,box_zoom,reset,save",
