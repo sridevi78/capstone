@@ -12,6 +12,7 @@ def index():
     import re
     import csv
     from bokeh.util.string import encode_utf8
+    from bokeh.resources import INLINE
     milk = request.form['milk']
     eggs = request.form['eggs']
     pnut = request.form['peanuts']
@@ -99,7 +100,11 @@ def index():
                 continue 
             elif len(urls) >= 10:
                 break
+    js_resources = INLINE.render_js()
+    css_resources = INLINE.render_css()
     html = flask.render_template('index.html',
+                                 js_resources=js_resources,
+                                 css_resources=css_resources,
                                  _milk=milk,
                                  _eggs=eggs,
                                  _pnut=pnut,
