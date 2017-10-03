@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect
 import flask
 from flask_wtf import Form
 from wtforms import SubmitField
-
 app = Flask(__name__)
 
 class StatsForm(Form):
