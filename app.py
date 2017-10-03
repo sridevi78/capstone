@@ -89,7 +89,7 @@ def index():
               continue 
           elif len(urls) >= 10:
               break
-      return              
+      return 'OK'             
   elif request.method == 'GET':
       return render_template('index.html')
   
