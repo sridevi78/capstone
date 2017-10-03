@@ -7,27 +7,34 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
-    print "entered"
     import numpy as np
     import pandas as pd
     import requests
-    import re
-    import csv
-    from bokeh.util.string import encode_utf8
+    from datetime import datetime
+    from bokeh.io import curdoc
+    from bokeh.layouts import row, widgetbox
+    from bokeh.models import ColumnDataSource, DatetimeTickFormatter
+    from bokeh.models.widgets import Slider, TextInput
+    from bokeh.plotting import figure
+    from bokeh.embed import components
     from bokeh.resources import INLINE
-    milk = request.form['milk']
-    eggs = request.form['eggs']
-    pnut = request.form['peanuts']
-    tnuts = request.form['treenuts']
-    wheat = request.form['wheat']
-    soy = request.form['soy']
-    fish = request.form['fish']
-    sfish = request.form['sfish']
-    sesame = request.form['sesame']
-    item1=request.form['Item_1']
-    item2=request.form['Item_2']
-    item3=request.form['Item_3']
-    print item1        
+    from bokeh.util.string import encode_utf8
+
+    args = flask.request.args
+    milk = request.args.get('milk')
+    eggs = request.args.get('eggs')
+    pnut = request.args.get('peanuts')
+    tnuts = request.args.get('treenuts')
+    wheat = request.args.get('wheat')
+    soy = request.args.get('soy')
+    fish = request.args.get('fish')
+    sfish = request.args.get('sfish')
+    sesame = request.args.get('sesame')
+    item1 = request.args.get('Item_1')
+    item2 = request.args.get('Item_2')
+    item3 = request.args.get('Item_3')
+
+    print item1
     print item2
     print item2
     stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
@@ -60,7 +67,7 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stop_words:
-        rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")    
+        rcp_data = pd.read_csv('recipe_data1.csv',"error_bad_lines = False")
         urls=[]
         for index,row in rcp_data.itertuples(index=True, name='Pandas'):
             #print "inside the for loop"
@@ -71,7 +78,7 @@ def index():
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
             title=info1[0].replace('"', "").strip()
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
-            chef=info1[1].replace('"', "").strip() 
+            chef=info1[1].replace('"', "").strip()
             info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
             rating=info1[2].replace('"', "").strip()
             info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
@@ -100,9 +107,34 @@ def index():
             elif len(urls) >= 10:
                 break
     print "reached end"
-    html=render_template('index.html',_milk=milk,_eggs=eggs,_pnut=pnut,_tnuts=tnuts,_wheat=wheat,_soy=soy,_fish=fish,_sfish=sfish,_sesame=sesame)
-    return encode_utf8(html)
-    
+    p = figure(
+        tools="pan,box_zoom,reset,save",
+        y_axis_type="linear",title="Stock Market Prices for  GOOG",
+        x_axis_label='Date', y_axis_label='Price'
+    )
+
+     js_resources = INLINE.render_js()
+     css_resources = INLINE.render_css()
+     script, div = components(p)
+     html = flask.render_template(
+           'index.html',
+           plot_script=script,
+           plot_div=div,
+           js_resources=js_resources,
+           css_resources=css_resources,
+           _milk=milk,
+           _eggs=eggs,
+           _pnut=pnut,
+           _tnuts=tnuts,
+           _wheat=wheat,
+           _soy=soy,
+           _fish=fish,
+           _sfish=sfish,
+           _sesame=sesame
+          )
+     return encode_utf8(html)
+
+
 
 if __name__ == '__main__':
-  app.run(port=33507) 
+  app.run(port=33507)
