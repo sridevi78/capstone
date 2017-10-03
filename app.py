@@ -21,6 +21,7 @@ def index():
     from bokeh.resources import INLINE
     from bokeh.util.string import encode_utf8
     import re
+    import csv
 
     args = flask.request.args
     milk = request.args.get('milk')
