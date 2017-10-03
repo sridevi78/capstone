@@ -101,7 +101,7 @@ def index():
                 elif len(urls) >= 10:
                     break
     else:
-        return render_template('index.html')
+        return render_template('index.html',request.form['myform'])
     
     
 
