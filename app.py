@@ -81,7 +81,7 @@ def index():
             row_list=str(row1).split('[')
             print row_list
             print "split by ["
-            info1=row_list[1].split(',')
+            info1=row_list[2].split(',')
             print info1
             print "second element split by ,"
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
@@ -96,7 +96,7 @@ def index():
             cook_time=info1[4].replace('"', "").strip()
             info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
             level=info1[5].replace('"', "").strip()
-            info2=row_list[2].split(']')
+            info2=row_list[3].split(']')
             print info2
             ing=info2[0]
             try:
