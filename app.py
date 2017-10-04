@@ -41,7 +41,7 @@ def index():
     #print item2
     #print item3
     stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
-    stop2=['egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
+    stop2=['eggs','egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
     stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
     stop4=['almond','beechnut','brazil nut','butternut','cashew','chestnut','coconut','hazelnut','macadamia','marzipan','almond paste','cashew butter','almond butter','peanut butter','almond milk','cashew milk','walnut oil','almond oil','pecan','pesto','pine nut','pistachio','praline','walnut']
     stop5=['edamame','soy','soya','soy bean','soy protein','soy sauce','tofu']
