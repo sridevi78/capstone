@@ -102,14 +102,16 @@ def index():
             ing=info2[0]
             try:
                 rlink2=info2[1].replace(",","").strip().split("'")
+                rlink=rlink2[1]
             except:
                 continue
-            rlink=rlink2[1]
+            
             flag=0
             print ing
             print "those were ingredients"
             for words in ing.split(','):
                 for word in words.split(' '):
+                    word=re.sub("[^a-z0-9. A-Z]+", "", word)
                     print word
                     print "that was one word"
                     for sword in stopwords:
