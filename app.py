@@ -89,6 +89,7 @@ def index():
             #print "second element split by ,"
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
             title=info1[0].replace('"', "").strip()
+            print type(title)
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
             chef=info1[1].replace('"', "").strip()
             info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
