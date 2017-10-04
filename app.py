@@ -113,7 +113,7 @@ def index():
                     print word
                     print "that was one word"
                     for sword in stopwords:
-                        if word.lower() in sword.lower() and flag==0:
+                        if word.lower() in str(sword).lower() and flag==0:
                             flag=1
            
             if flag == 1:
