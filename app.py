@@ -21,6 +21,7 @@ def index():
     from bokeh.util.string import encode_utf8
     import re
     import csv
+    urls=[]
 
     args = flask.request.args
     milk = request.args.get('milk')
@@ -74,7 +75,7 @@ def index():
         rcp_data=[]
         for row in csv_f:
             rcp_data.append(row)
-        urls=[]
+     
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
             #print row1
@@ -113,6 +114,8 @@ def index():
                     print "that was one word"
                     if word in stopwords and flag==0:
                         flag=1
+            print flag
+            print "that was flag"
             if flag == 1:
                 continue
             else:
