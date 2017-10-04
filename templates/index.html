@@ -27,10 +27,7 @@
 
             {{ css_resources|indent(4)|safe }}
         <script type="text/JavaScript">
-        function showMessage(){
-            display_message.innerHTML= "trial printing";
-        }
-        </script>
+        
         </head>
 	<body bgcolor="#E6E6FA">
 		<div class="container">
@@ -127,10 +124,12 @@
         </div>
         </fieldset>
         <br>
+
         <div class="input submit">
-            <input type="submit" onclick="showMessage()" value="submit">
+            <input type="submit" value="submit">
         </div>
-        <p> Results: <span id = "display_message"></span> </p>
+        <p> Results: </p>
+        <p> {{ _urls }}</p>
         <br> 
    </form>
       <br>
