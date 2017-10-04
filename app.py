@@ -125,7 +125,8 @@ def index():
             else:
                 print rlink
                 print ing
-                urls.append([rlink,title.encode('ascii','ignore')])
+
+                urls.append([rlink,unicodedata.normalize('NFKD', title).encode('ascii','ignore')])
                 if len(urls) >= 10:
                     break       
     print urls
