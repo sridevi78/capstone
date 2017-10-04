@@ -7,7 +7,6 @@ app = Flask(__name__)
 @app.route('/')
 
 def index():
-    urls=[]
     import numpy as np
     import pandas as pd
     import requests
@@ -76,6 +75,7 @@ def index():
         for row in csv_f:
             rcp_data.append(row)
         for ind in range(len(rcp_data)): 
+            urls=[]
             row1=rcp_data[ind]
             #print row1
             row_list=str(row1).split('[')
