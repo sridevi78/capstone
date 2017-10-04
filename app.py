@@ -107,7 +107,7 @@ def index():
             flag=0
             print ing
             print "those were ingredients"
-            for word in ing.split(',')
+            for word in ing.split(','):
                 print word
                 print "that was one word"
                 if word in stopwords and flag==0:
