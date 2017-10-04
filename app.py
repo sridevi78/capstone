@@ -22,7 +22,7 @@ def index():
     import re
     import csv
     urls=[]
-    titles=[]
+    
 
     args = flask.request.args
     milk = request.args.get('milk')
@@ -123,9 +123,8 @@ def index():
                 continue
             else:
                 print rlink
-                print ing
-                titles.append(title)          
-                urls.append(rlink)
+                print ing     
+                urls.append([rlink,title])
                 if len(urls) >= 10:
                     break       
     print urls
