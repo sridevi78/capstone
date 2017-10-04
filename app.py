@@ -21,6 +21,7 @@ def index():
     from bokeh.util.string import encode_utf8
     import re
     import csv
+    import unicodedata
     urls=[]
     
 
@@ -123,8 +124,8 @@ def index():
                 continue
             else:
                 print rlink
-                print ing     
-                urls.append([rlink,str(title)])
+                print ing
+                urls.append([rlink,title.encode('ascii','ignore')])
                 if len(urls) >= 10:
                     break       
     print urls
