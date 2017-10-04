@@ -144,8 +144,7 @@ def index():
            _fish=fish,
            _sfish=sfish,
            _sesame=sesame,
-           _urls=urls,
-           _titles=titles
+           _urls=urls
           )
     return encode_utf8(html)
 
