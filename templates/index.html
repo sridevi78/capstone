@@ -126,9 +126,12 @@
         <div class="input submit">
             <input type="submit" value="submit">
         </div>
-        Results:
-        <input type="text" name="_text" value="{{ _text }}">
-        
+        {% for result in results%}
+        <tr>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+        </tr>
+        {% endfor %} 
         <br> 
    </form>
       <br>

@@ -130,7 +130,8 @@ def index():
            _soy=soy,
            _fish=fish,
            _sfish=sfish,
-           _sesame=sesame
+           _sesame=sesame,
+           _urls=urls
           )
     return encode_utf8(html)
 
