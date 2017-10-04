@@ -129,7 +129,9 @@
             <input type="submit" value="submit">
         </div>
         <p> Results: </p>
-        <p> {{ _urls }}</p>
+         {% for url in _urls %}
+         <p>{{ url }} </p>
+          {% endfor %}
         <br> 
    </form>
       <br>
