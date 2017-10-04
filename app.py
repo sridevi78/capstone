@@ -77,13 +77,13 @@ def index():
             rcp_data.append(row)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            print row1
+            #print row1
             row_list=str(row1).split('[')
-            print row_list
-            print "split by ["
+            #print row_list
+            #print "split by ["
             info1=row_list[2].split(',')
-            print info1
-            print "second element split by ,"
+            #print info1
+            #print "second element split by ,"
             info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
             title=info1[0].replace('"', "").strip()
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
@@ -97,7 +97,7 @@ def index():
             info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
             level=info1[5].replace('"', "").strip()
             info2=row_list[3].split(']')
-            print info2
+            #print info2
             ing=info2[0]
             try:
                 rlink2=info2[1].replace(",","").strip().split("'")
@@ -114,7 +114,7 @@ def index():
                 urls.append(rlink)
                 if len(urls) >= 10:
                     break       
-    print "urls"
+    print urls
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
