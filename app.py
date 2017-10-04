@@ -100,9 +100,10 @@ def index():
             print info2
             ing=info2[0]
             try:
-                rlink=info2[1].replace(",","").strip()
+                rlink2=info2[1].replace(",","").strip().split("'")
             except:
                 continue
+            rlink=rlink2[1]
             flag=0
             for word in ing:
                 if word in stopwords and flag==0:
@@ -110,7 +111,10 @@ def index():
             if flag == 1:
                 continue
             else:
-                urls.append(rlink)       
+                urls.append(rlink)
+                if len(urls) >= 10:
+                    break       
+    print "urls"
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
