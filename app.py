@@ -122,6 +122,8 @@ def index():
                 continue
             else:
                 print rlink
+                print ing
+             
                 urls.append(rlink)
                 if len(urls) >= 10:
                     break       
