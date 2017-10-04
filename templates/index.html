@@ -130,7 +130,7 @@
         <br>
         <legend><p> Results: </p></legend>
         {% for url,title1 in _urls %}
-         <p><a href={{ url }}><i>{{ title1 }}</i></p>
+         <p><a href={{ url }}><i>{{str(title1) }}</i></p>
         {% endfor %}
         <br> 
    </form>
