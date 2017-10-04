@@ -107,11 +107,12 @@ def index():
             flag=0
             print ing
             print "those were ingredients"
-            for word in ing.split(','):
-                print word
-                print "that was one word"
-                if word in stopwords and flag==0:
-                    flag=1
+            for words in ing.split(','):
+                for word in words.split(' '):
+                    print word
+                    print "that was one word"
+                    if word in stopwords and flag==0:
+                        flag=1
             if flag == 1:
                 continue
             else:
