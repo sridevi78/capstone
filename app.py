@@ -106,6 +106,8 @@ def index():
             rlink=rlink2[1]
             flag=0
             for word in ing:
+                print word
+                print "that was one word"
                 if word in stopwords and flag==0:
                     flag=1
             if flag == 1:
