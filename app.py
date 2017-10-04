@@ -112,10 +112,10 @@ def index():
                 for word in words.split(' '):
                     print word
                     print "that was one word"
-                    if word in stopwords and flag==0:
-                        flag=1
-            print flag
-            print "that was flag"
+                    for sword in stopwords:
+                        if word.lower() in sword.lower() and flag==0:
+                            flag=1
+           
             if flag == 1:
                 continue
             else:
