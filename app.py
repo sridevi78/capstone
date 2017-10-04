@@ -107,13 +107,13 @@ def index():
                 continue
             
             flag=0
-            print ing
-            print "those were ingredients"
+            #print ing
+            #print "those were ingredients"
             for words in ing.split(','):
                 for word in words.split(' '):
                     word=re.sub("[^a-z0-9. A-Z]+", "", word)
-                    print word
-                    print "that was one word"
+                    #print word
+                    #print "that was one word"
                     for sword in stopwords:
                         if word.lower() in str(sword).lower() and flag==0:
                             flag=1
@@ -121,6 +121,7 @@ def index():
             if flag == 1:
                 continue
             else:
+                print rlink
                 urls.append(rlink)
                 if len(urls) >= 10:
                     break       
