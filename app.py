@@ -74,8 +74,8 @@ def index():
         rcp_data=[]
         for row in csv_f:
             rcp_data.append(row)
+        urls=[]
         for ind in range(len(rcp_data)): 
-            urls=[]
             row1=rcp_data[ind]
             #print row1
             row_list=str(row1).split('[')
