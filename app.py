@@ -110,7 +110,11 @@ def index():
             except:
                 continue
             
+            
             flag=0
+            ctime=cook_time.split('H','M')
+            print ctime
+            break
             #print ing
             #print "those were ingredients"
             for words in ing.split(','):
