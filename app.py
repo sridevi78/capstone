@@ -113,8 +113,29 @@ def index():
             
             flag=0
             ctime=cook_time.split('H')
-            print ctime
-            break
+            ct=int(re.sub("[^a-z A-Z]+", "", ctime[0]))*60+int(re.sub("[^a-z A-Z]+", "", ctime[1]))
+            print ct
+            if item1 in le15:
+                if ct > 15:
+                    flag=1
+            if item1 in le30:
+                if ct > 30:
+                    flag=1
+            if item1 in le45:
+                if ct > 45:
+                    flag=1
+            if item1 in le60:
+                if ct >60:
+                    flag=1
+            if item2 in 'ea':
+                if 'easy' not in level.lower():
+                    flag=1
+            if item2 in 'me':
+                if 'medium' not in level.lower():
+                    flag=1
+            if item2 in 'di':
+                if 'difficult' not in level.lower():
+                    flag=1
             #print ing
             #print "those were ingredients"
             for words in ing.split(','):
