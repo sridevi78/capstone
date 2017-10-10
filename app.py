@@ -112,7 +112,7 @@ def index():
             
             
             flag=0
-            ctime=cook_time.split('H')
+            ctime=str(ook_time).split('H')
             ct=int(re.sub("[^a-z A-Z]+", "", ctime[0]))*60+int(re.sub("[^a-z A-Z]+", "", ctime[1]))
             print ct
             if item1 in le15:
