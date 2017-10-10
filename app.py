@@ -169,17 +169,18 @@ def index():
                             flag=1
             print flag
             print "that was flag"
-            break
+            
             if flag == 1:
                 continue
             else:
                 print ct
                 print rating
                 print level1.lower()
-                break
                 #print rlink
                 #print title
                 urls.append([rlink,title])
+                print urls
+                break
                 if len(urls) >= 10:
                     break       
     print urls
@@ -190,7 +191,7 @@ def index():
            'index.html',
            js_resources=js_resources,
            css_resources=css_resources,
-           _milk=milk,
+          _milk=milk,
            _eggs=eggs,
            _pnut=pnut,
            _tnuts=tnuts,
