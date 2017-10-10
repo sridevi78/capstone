@@ -171,12 +171,14 @@ def index():
                     for sword in stopwords:
                         if word.lower() in str(sword).lower() and flag==0:
                             flag=1
-           
+            print flag
+            print "that was flag"
+            break
             if flag == 1:
                 continue
             else:
                 #print rlink
-                print title
+                #print title
                 urls.append([rlink,title])
                 if len(urls) >= 10:
                     break       
