@@ -119,11 +119,7 @@ def index():
             ctime0=re.sub("[^0-9]+", "", ctime[0])
             ctime1=re.sub("[^0-9]+", "", ctime[1])
             level1=str(level)[1:]
-            print ctime0,ctime1
             ct=60*int(ctime0)+int(ctime1)
-            print ct 
-            print rating
-            print level1.lower()
             if 'le15' in item1:
                 if ct > 15:
                     flag=1
@@ -177,6 +173,10 @@ def index():
             if flag == 1:
                 continue
             else:
+                print ct
+                print rating
+                print level1.lower()
+                break
                 #print rlink
                 #print title
                 urls.append([rlink,title])
