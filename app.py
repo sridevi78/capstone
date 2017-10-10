@@ -113,8 +113,11 @@ def index():
             
             flag=0
             ctime=str(cook_time).split('H')
-            ct=int(re.sub("[^a-z A-Z]+", "", ctime[0]))*60+int(re.sub("[^a-z A-Z]+", "", ctime[1]))
-            print ct
+            ctime0=re.sub("[^a-z A-Z]+", "", ctime[0])
+            ctime1=re.sub("[^a-z A-Z]+", "", ctime[1])
+            print ctime0,ctime1
+            ct=60*int(ctime0)+int(ctime1)
+            print ct 
             if item1 in le15:
                 if ct > 15:
                     flag=1
