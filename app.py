@@ -118,6 +118,7 @@ def index():
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
             ctime1=re.sub("[^0-9]+", "", ctime[1])
+            level1=re.sub("[^u]+","",level)
             print ctime0,ctime1
             ct=60*int(ctime0)+int(ctime1)
             print ct 
@@ -136,13 +137,13 @@ def index():
                 if ct >60:
                     flag=1
             if 'ea' in item2:
-                if 'easy' not in level.lower():
+                if 'easy' not in level1.lower():
                     flag=1
             if 'me' in item2:
-                if 'medium' not in level.lower():
+                if 'medium' not in level1.lower():
                     flag=1
             if 'di' in item2:
-                if 'difficult' not in level.lower():
+                if 'difficult' not in level1.lower():
                     flag=1
             if 'ge4' in item3:
                 if rating < 4.0:
