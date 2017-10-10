@@ -160,7 +160,7 @@ def index():
             if 'ge0' in item3:
                 if rating <=0.0:
                     flag=1
-            break    
+             
             #print ing
             #print "those were ingredients"
             for words in ing.split(','):
