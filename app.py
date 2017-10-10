@@ -123,7 +123,7 @@ def index():
             ct=60*int(ctime0)+int(ctime1)
             print ct 
             print rating
-            print level
+            print level1.lower()
             if 'le15' in item1:
                 if ct > 15:
                     flag=1
