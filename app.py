@@ -112,7 +112,7 @@ def index():
             
             
             flag=0
-            ctime=cook_time.split('H','M')
+            ctime=cook_time.split('H')
             print ctime
             break
             #print ing
