@@ -94,7 +94,7 @@ def index():
             info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
             chef=info1[1].replace('"', "").strip()
             info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
-            rating=info1[2].replace('"', "").strip()
+            rating=float(info1[2].replace('"', "").strip())
             info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
             review=info1[3].replace('"', "").strip()
             info1[4]=re.sub("[^a-z0-9. A-Z]+", "", info1[4])
@@ -118,27 +118,43 @@ def index():
             print ctime0,ctime1
             ct=60*int(ctime0)+int(ctime1)
             print ct 
-            if item1 in le15:
+            if 'le15' in item1:
                 if ct > 15:
                     flag=1
-            if item1 in le30:
+            if 'le30' in item1:
                 if ct > 30:
                     flag=1
-            if item1 in le45:
+            if 'le45' in item1:
                 if ct > 45:
                     flag=1
-            if item1 in le60:
+            if 'le60' in item1:
                 if ct >60:
                     flag=1
-            if item2 in 'ea':
+            if 'ea' in item2:
                 if 'easy' not in level.lower():
                     flag=1
-            if item2 in 'me':
+            if 'me' in item2:
                 if 'medium' not in level.lower():
                     flag=1
-            if item2 in 'di':
+            if 'di' in item2:
                 if 'difficult' not in level.lower():
                     flag=1
+            if 'ge4' in item3:
+                if rating < 4.0:
+                    flag=1
+            if 'ge3' in item3:
+                if rating < 3.0:
+                    flag=1
+            if 'ge2' in item3:
+                if rating < 2.0:
+                    flag=1
+            if 'ge1' in item3:
+                if rating < 1.0:
+                    flag=1
+            if 'ge0' in item3:
+                if rating <=0.0:
+                    flag=1
+    
             #print ing
             #print "those were ingredients"
             for words in ing.split(','):
