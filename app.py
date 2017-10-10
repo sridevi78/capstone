@@ -118,7 +118,7 @@ def index():
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
             ctime1=re.sub("[^0-9]+", "", ctime[1])
-            level1=re.sub("[^u]+","",level)
+            level1=re.sub("[^u]+","",str(level))
             print ctime0,ctime1
             ct=60*int(ctime0)+int(ctime1)
             print ct 
