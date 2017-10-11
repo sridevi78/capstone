@@ -39,9 +39,6 @@ def index():
     item2 = request.args.get('Item_2')
     item3 = request.args.get('Item_3')
 
-    print item1
-    print item2
-    print item3
     stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
     stop2=['eggs','egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
     stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
@@ -173,9 +170,16 @@ def index():
             if flag == 1:
                 continue
             else:
+                print item1
+                print item2
+                print item3
+                print "Those were the preferences"
+                print "**************************"
                 print ct
                 print rating
                 print level1.lower()
+                print title
+                print rlink
                 #print rlink
                 #print title
                 urls.append([rlink,title])
