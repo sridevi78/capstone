@@ -180,11 +180,7 @@ def index():
                 print level1.lower()
                 print title
                 print rlink
-                #print rlink
-                #print title
                 urls.append([rlink,title])
-                print urls
-                break
                 if len(urls) >= 10:
                     break       
     print urls
