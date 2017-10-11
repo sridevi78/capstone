@@ -23,7 +23,7 @@ def index():
     import csv
     import unicodedata
     urls=[]
-    
+    reviews=[]
 
     args = flask.request.args
     milk = request.args.get('milk')
@@ -180,9 +180,8 @@ def index():
                 #print level1.lower()
                 #print title
                 #print rlink
-                urls.append([rlink,title])
-                if len(urls) >= 10:
-                    break       
+                urls.append((rlink,title,review))
+                
     print urls
     print "reached end"
     js_resources = INLINE.render_js()
