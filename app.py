@@ -78,7 +78,7 @@ def index():
      
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            #print row1
+            print row1
             row_list=str(row1).split('[')
             #print row_list
             #print "split by ["
