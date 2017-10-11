@@ -78,7 +78,7 @@ def index():
      
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            print row1
+            #print row1
             row_list=str(row1).split('[')
             #print row_list
             #print "split by ["
@@ -164,22 +164,22 @@ def index():
                     for sword in stopwords:
                         if word.lower() in str(sword).lower() and flag==0:
                             flag=1
-            print flag
-            print "that was flag"
+            #print flag
+            #print "that was flag"
             
             if flag == 1:
                 continue
             else:
-                print item1
-                print item2
-                print item3
-                print "Those were the preferences"
-                print "**************************"
-                print ct
-                print rating
-                print level1.lower()
-                print title
-                print rlink
+                #print item1
+                #print item2
+                #print item3
+                #print "Those were the preferences"
+                #print "**************************"
+                #print ct
+                #print rating
+                #print level1.lower()
+                #print title
+                #print rlink
                 urls.append([rlink,title])
                 if len(urls) >= 10:
                     break       
