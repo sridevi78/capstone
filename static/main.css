@@ -1,6 +1,6 @@
-body            { font-family: sans-serif; background: lightblue; color: brown; }
-a, h1           { color:  red; }
-h2              { color: brown; }
+body            { font-family: sans-serif; background-color: lightblue; }
+a, h1           { color:  #377ba8; }
+h2              { color: #377ba8; }
 h1, h2          { font-family: 'Georgia', serif; margin: 0; }
 h1              { border-bottom: 2px solid #eee; }
 h2              { font-size: 1.2em; }
