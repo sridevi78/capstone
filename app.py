@@ -91,7 +91,7 @@ def index():
             chef=info1[1].replace('"', "").strip()
             info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
             try:
-                rating=float(info1[2].replace('"', "").strip())
+                rating=info1[2].replace('"', "").strip()
             except:
                 continue
             #print "checkpoint 1"
@@ -106,7 +106,7 @@ def index():
             ing=info2[0]
             print "title is %s" %title
             print "chef is %s" %chef
-            print "rating is %f" %rating
+            print "rating is %s" %rating
             print "reviews are %d" %review
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
@@ -118,7 +118,7 @@ def index():
                 rlink=row_list[-1].split("]")[-3].split("'")[-2]
             except:
                 continue
-            
+            print "recipe link is %s" %rlink
             print "checkpoint2"          
             flag=0
        
