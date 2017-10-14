@@ -77,7 +77,7 @@ def index():
      
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            #print row1
+            print row1
             row_list=str(row1).split('[')
             #print row_list
             #print "split by ["
@@ -96,7 +96,7 @@ def index():
                 continue
             #print "checkpoint 1"
             info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
-            review=int(info1[3].replace('"', "").strip())
+            review=info1[3].replace('"', "").strip()
             info1[4]=re.sub("[^a-z0-9. A-Z]+", "", info1[4])
             cook_time=info1[4].replace('"', "").strip()
             info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
