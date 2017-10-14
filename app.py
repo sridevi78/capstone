@@ -169,16 +169,16 @@ def index():
             if flag == 1:
                 continue
             else:
-                #print item1
-                #print item2
-                #print item3
-                #print "Those were the preferences"
+                print item1
+                print item2
+                print item3
+                print "Those were the preferences"
                 #print "**************************"
                 #print ct
                 #print rating
                 #print level1.lower()
                 #print title
-                #print rlink
+                print rlink
                 urls1.append((rlink,title,review))
                 
     output = sorted(urls1, key=lambda x: x[-1])[:10]
