@@ -3,7 +3,7 @@ html {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-opacity: 1;
   background-image: url({{ url_for('static', filename='/css/bg.png') }});
-  background-opacity: 0;
 }
  
