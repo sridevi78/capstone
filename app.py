@@ -23,8 +23,7 @@ def index():
     import csv
     import unicodedata
     urls=[]
-    reviews=[]
-
+    
     args = flask.request.args
     milk = request.args.get('milk')
     eggs = request.args.get('eggs')
