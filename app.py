@@ -104,20 +104,24 @@ def index():
             info2=row_list[3].split(']')
             link=row_list[4][2]
             ing=info2[0]
-            print row_list[-1].split("]")[-3].split("'")[-2]
-            try:
-                rlink2=info2[1].replace(",","").strip().split("'")
-                rlink=rlink2[1]
-            except:
-                continue
-            
-            print "checkpoint2"          
-            flag=0
+            print "title is %s" %title
+            print "chef is %s" %chef
+            print "rating is %f" %rating
+            print "reviews are %d" %review
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
             ctime1=re.sub("[^0-9]+", "", ctime[1])
             level1=str(level)[1:]
             ct=60*int(ctime0)+int(ctime1)
+            print "cook time is %d" %ct
+            try:
+                rlink=row_list[-1].split("]")[-3].split("'")[-2]
+            except:
+                continue
+            
+            print "checkpoint2"          
+            flag=0
+       
             if 'le15' in item1:
                 if ct > 15:
                     flag=1
@@ -155,8 +159,8 @@ def index():
                 if rating <=0.0:
                     flag=1
              
-            #print ing
-            #print "those were ingredients"
+            print ing
+            print "those were ingredients"
             for words in ing.split(','):
                 for word in words.split(' '):
                     word=re.sub("[^a-z0-9. A-Z]+", "", word)
