@@ -104,8 +104,7 @@ def index():
             info2=row_list[3].split(']')
             link=row_list[4][2]
             ing=info2[0]
-            for row in row_list:
-                print row
+            print row_list[-1]
             try:
                 rlink2=info2[1].replace(",","").strip().split("'")
                 rlink=rlink2[1]
