@@ -69,7 +69,7 @@ def index():
         stopwords.append(stop9)
     if stopwords:
 
-        f = open('recipe_data1.csv')
+        f = open('recipe_data221.csv')
         csv_f = csv.reader(f)
         rcp_data=[]
         for row in csv_f:
