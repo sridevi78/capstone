@@ -107,7 +107,7 @@ def index():
             print "title is %s" %title
             print "chef is %s" %chef
             print "rating is %s" %rating
-            print "reviews are %d" %review
+            print "reviews are %s" %review
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
             ctime1=re.sub("[^0-9]+", "", ctime[1])
