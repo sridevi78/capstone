@@ -68,7 +68,7 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stopwords:
-
+        print "found stopwords"
         f = open('recipe_data21.csv')
         csv_f = csv.reader(f)
         rcp_data=[]
