@@ -102,9 +102,9 @@ def index():
             info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
             level=info1[5].replace('"', "").strip()
             info2=row_list[3].split(']')
-            #print info2
+            print info2
             ing=info2[0]
-            print info2[1]
+            #print info2[1]
             try:
                 rlink2=info2[1].replace(",","").strip().split("'")
                 rlink=rlink2[1]
