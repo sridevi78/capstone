@@ -77,52 +77,30 @@ def index():
      
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            print row1
-            row_list=str(row1).split('[')
-            #print row_list
-            #print "split by ["
-            info1=row_list[2].split(',')
-            #print info1
-            #print "second element split by ,"
-            info1[0]=re.sub("[^a-z0-9. A-Z]+", "", info1[0])
-            title=info1[0].replace('"', "").strip()
-            #print type(title)
-            info1[1]=re.sub("[^a-z0-9. A-Z]+", "", info1[1])
-            chef=info1[1].replace('"', "").strip()
-            info1[2]=re.sub("[^a-z0-9. A-Z]+", "", info1[2])
-            try:
-                rating=info1[2].replace('"', "").strip()
-            except:
-                continue
-            #print "checkpoint 1"
-            info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
-            review=info1[3].replace('"', "").strip()
-            info1[4]=re.sub("[^a-z0-9. A-Z]+", "", info1[4])
-            cook_time=info1[4].replace('"', "").strip()
-            info1[5]=re.sub("[^a-z0-9. A-Z]+", "", info1[5])
-            level=info1[5].replace('"', "").strip()
-            info2=row_list[3].split(']')
-            link=row_list[4][2]
-            ing=info2[0]
+            row_list=row1.split('sep')
+            title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
+            title=title.replace('"', "").strip()
+            chef=re.sub("[^a-z0-9. A-Z]+", "", row_list[1])
+            chef=chef.replace('"', "").strip()
+            rating=row_list[2].replace('"', "").strip()
+            review=row_list[3].replace('"', "").strip()
+            cook_time=re.sub("[^a-z0-9. A-Z]+", "", row_list[4])
+            cook_time=row_list[4].replace('"', "").strip()
+            level=re.sub("[^a-z0-9. A-Z]+", "", row_list[5])
+            level=level.replace('"', "").strip()
+            ing=row_list[6]
             print "title is %s" %title
             print "chef is %s" %chef
             print "rating is %s" %rating
             print "reviews are %s" %review
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
-            try:
-                ctime1=re.sub("[^0-9]+", "", ctime[1])
-            except:
-                continue
-            level1=str(level)[1:]
+            ctime1=re.sub("[^0-9]+", "", ctime[1])
             ct=60*int(ctime0)+int(ctime1)
             print "cook time is %d" %ct
-            try:
-                rlink=row_list[-1].split("]")[-3].split("'")[-2]
-            except:
-                continue
+            rlink=row_list[7]
             print "recipe link is %s" %rlink
-            print "checkpoint2"          
+                      
             flag=0
        
             if 'le15' in item1:
@@ -138,13 +116,13 @@ def index():
                 if ct >60:
                     flag=1
             if 'ea' in item2:
-                if 'easy' not in level1.lower():
+                if 'easy' not in level.lower():
                     flag=1
             if 'me' in item2:
-                if 'medium' not in level1.lower():
+                if 'medium' not in level.lower():
                     flag=1
             if 'di' in item2:
-                if 'difficult' not in level1.lower():
+                if 'difficult' not in level.lower():
                     flag=1
             if 'ge4' in item3:
                 if rating < 4.0:
