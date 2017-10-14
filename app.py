@@ -22,7 +22,7 @@ def index():
     import re
     import csv
     import unicodedata
-    urls=[]
+    urls1=[]
     
     args = flask.request.args
     milk = request.args.get('milk')
@@ -179,9 +179,10 @@ def index():
                 #print level1.lower()
                 #print title
                 #print rlink
-                urls.append((rlink,title,review))
+                urls1.append((rlink,title,review))
                 
-    print urls
+    output = sorted(urls1, key=lambda x: x[-1])[:10]
+    print output
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
@@ -198,7 +199,7 @@ def index():
            _fish=fish,
            _sfish=sfish,
            _sesame=sesame,
-           _urls=urls
+           _urls=output
           )
     return encode_utf8(html)
 
