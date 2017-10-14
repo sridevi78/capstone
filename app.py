@@ -163,8 +163,8 @@ def index():
                     for sword in stopwords:
                         if word.lower() in str(sword).lower() and flag==0:
                             flag=1
-            #print flag
-            #print "that was flag"
+            print flag
+            print "that was flag"
             
             if flag == 1:
                 continue
