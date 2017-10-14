@@ -94,6 +94,7 @@ def index():
                 rating=float(info1[2].replace('"', "").strip())
             except:
                 continue
+            print "checkpoint 1"
             info1[3]=re.sub("[^a-z0-9. A-Z]+", "", info1[3])
             review=info1[3].replace('"', "").strip()
             info1[4]=re.sub("[^a-z0-9. A-Z]+", "", info1[4])
