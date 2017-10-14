@@ -1,4 +1,4 @@
-body            { font-family: sans-serif; background: lightblue; }
+body            { font-family: sans-serif; background: lightblue; color: brown; }
 a, h1           { color:  red; }
 h2              { color: brown; }
 h1, h2          { font-family: 'Georgia', serif; margin: 0; }
