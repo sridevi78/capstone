@@ -1,9 +1,0 @@
-html {
-  background-image: url({{ url_for('static', filename='/css/bg.png') }})
-  background-position: 0% 0%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-opacity: 0.5;
-}
- 
