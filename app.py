@@ -154,9 +154,7 @@ def index():
             if flag == 1:
                 continue
             else:
-                print ing.encode('utf-8')
-                print "those are the ingredient"
-                ing1=ing.encode('utf-8').split(',')
+                ing1=ing.split(',')
                 print type(ing.encode('utf-8').split(','))
                 print "that was split by comma"
                 for jj in range(len(ing1)):
