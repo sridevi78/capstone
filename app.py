@@ -162,18 +162,17 @@ def index():
                             #print sword
                             if word.lower() in str(sword).lower() and flag==0:
                                 #print ind
-                                print word.lower()
-                                print str(sword).lower()
+                                #print word.lower()
+                                #print str(sword).lower()
                                 flag=1
    
             if flag == 1:
                 continue
             else:
-                print rlink,title,review
+                print rlink
                 urls1.append((rlink,title,review))
-    #print urls1            
+     
     output = sorted(urls1, key=lambda x: x[-1])[:10]
-    #print output
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
