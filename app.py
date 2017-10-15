@@ -157,14 +157,16 @@ def index():
                 for words in ing.split(','):
                     for word in words.split(' '):
                         word=re.sub("[^a-z0-9. A-Z]+", "", word)
-                        #print word
+                        print word
+                        print "***************"
                         for sword in stopwords:
-                            print word.lower(),str(sword).lower()
+                            print str(sword).lower()
                             if word.lower() in str(sword).lower() and flag==0:
                                 #print ind
                                 #print word.lower()
                                 #print str(sword).lower()
                                 flag=1
+                        print "********************"
                         print flag
                         break
             if flag == 1:
