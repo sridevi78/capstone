@@ -155,26 +155,17 @@ def index():
                 continue
             else:
                 ing1=ing.split(',')
-                print type(ing.encode('utf-8').split(','))
-                print "that was split by comma"
                 for jj in range(len(ing1)):
-                    print ing1[jj]
-                    print "those were words"
-                    for word in words.split(' '):
-                        print word
-                        word=re.sub("[^a-z0-9. A-Z]+", "", word.encode('utf-8'))
-                        #print word.encode('utf-8')
+                    for word in ing1[jj].split(' '):
+                        word1=re.sub("[^a-z0-9. A-Z]+", "", word)
                         for sword in stopwords:
-                            #print str(sword).lower()
-                            if word.lower() in str(sword).lower() and flag==0:
-                                #print ind
-                                #print word.lower()
-                                #print str(sword).lower()
+                            if word1.lower() in str(sword).lower() and flag==0:
                                 flag=1
-                    print "those were further split"
-                    print flag
-                    print "that was flag"
-                    break
+                    
+                print rlink
+                print flag
+                print "that was flag"
+                break
             if flag == 1:
                 continue
             else:
