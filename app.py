@@ -166,11 +166,6 @@ def index():
                                 print word1.lower(),str(sword).lower()
                                 if word1.lower() == str(sword).lower():
                                     flag=1
-                    #print "till here"    
-                print rlink
-                print flag
-                print "that was flag"
-                break
             if flag == 1:
                 continue
             else:
