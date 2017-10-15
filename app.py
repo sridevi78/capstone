@@ -162,8 +162,11 @@ def index():
                             #print sword
                             if word.lower() in str(sword).lower() and flag==0:
                                 #print ind
-                                print word.lower(),str(sword).lower()
+                                print word.lower()
+                                print str(sword).lower()
                                 flag=1
+                                
+            print flag
             if flag == 1:
                 continue
             else:
