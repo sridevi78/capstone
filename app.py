@@ -141,7 +141,8 @@ def index():
             if 'ge0' in item3:
                 if rating <=0.0:
                     flag=1
-             
+            if flag == 0:
+                print "flag is still 0"
             #print type(ing.encode('utf-8'))
             #print "those were ingredients"
             for words in ing.split(','):
