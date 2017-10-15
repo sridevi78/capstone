@@ -165,12 +165,11 @@ def index():
                                 print word.lower()
                                 print str(sword).lower()
                                 flag=1
-                                
-            print flag
+   
             if flag == 1:
                 continue
             else:
-                #print rlink,title,review
+                print rlink,title,review
                 urls1.append((rlink,title,review))
     #print urls1            
     output = sorted(urls1, key=lambda x: x[-1])[:10]
