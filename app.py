@@ -68,11 +68,11 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stopwords:
-        print "found stopwords"
+        #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
              rcp_data=dill.load(f)
-        print len(rcp_data)
+        #print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
             #print type(row1.encode('utf-8'))
@@ -156,7 +156,7 @@ def index():
             if flag == 1:
                 continue
             else:
-                print rlink,title,review
+                #print rlink,title,review
                 urls1.append((rlink,title,review))
     #print urls1            
     output = sorted(urls1, key=lambda x: x[-1])[:10]
