@@ -162,6 +162,7 @@ def index():
                     for ii in range(len(ing2)):
                         print ing2[ii]
                         if " " not in ing2[ii]:
+                            print ing2[ii]
                             word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii])
                             for sword in stopwords:
                                 if word1.lower() in str(sword).lower():
