@@ -69,8 +69,8 @@ def index():
         stopwords.append(stop9)
     if stopwords:
         print type(stopwords)
-        for sword in stopwords:
-            print sword
+        for i in range(len(stopwords)):
+            print stopwords[i]
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
