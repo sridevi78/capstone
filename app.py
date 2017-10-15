@@ -163,7 +163,7 @@ def index():
                         if ing2[ii].strip():
                             word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
                             for sword in stopwords:
-                                print word1.lower(),str(sword).lower()
+                                #print word1.lower(),str(sword).lower()
                                 if word1.lower() == str(sword).lower():
                                     flag=1
             if flag == 1:
@@ -172,7 +172,9 @@ def index():
                 print rlink
                 urls1.append((rlink,title,review))
     print "out of the loop"
+    print urls1
     output = sorted(urls1, key=lambda x: x[-1])[:10]
+    print output
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
