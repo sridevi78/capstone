@@ -155,7 +155,10 @@ def index():
                 continue
             else:
                 print ing.encode('utf-8')
-                print "those are the ingredients"
+                print "those are the ingredient"
+                print ing.encode('utf-8').split(','):
+                print type(ing.encode('utf-8').split(','))
+                print "that was split by comma"
                 for words in ing.encode('utf-8').split(','):
                     print words
                     print "those were words"
