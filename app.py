@@ -156,17 +156,17 @@ def index():
             else:
                 ing1=ing.split(',')
                 for jj in range(len(ing1)):
-                    print ing1[jj]
+                    #print ing1[jj]
                     ing2=ing1[jj].split(" ")
-                    print "from here"
+                    #print "from here"
                     for ii in range(len(ing2)):
                         if ing2[ii].strip():
                             word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
-                            print word1
                             for sword in stopwords:
+                                print word1.lower(),str(sword).lower()
                                 if word1.lower() in str(sword).lower():
                                     flag=1
-                    print "till here"    
+                    #print "till here"    
                 print rlink
                 print flag
                 print "that was flag"
