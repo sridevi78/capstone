@@ -155,11 +155,11 @@ def index():
                 continue
             else:
                 for words in ing.split(','):
-                    print words
+                    print words.encode('utf-8')
                     print "*******************"
                     for word in words.split(' '):
                         word=re.sub("[^a-z0-9. A-Z]+", "", word)
-                        print word
+                        print word.encode('utf-8')
                         for sword in stopwords:
                             #print str(sword).lower()
                             if word.lower() in str(sword).lower() and flag==0:
