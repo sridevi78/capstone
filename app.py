@@ -20,7 +20,7 @@ def index():
     from bokeh.resources import INLINE
     from bokeh.util.string import encode_utf8
     import re
-    import csv
+    import dill
     import unicodedata
     urls1=[]
     
@@ -69,12 +69,10 @@ def index():
         stopwords.append(stop9)
     if stopwords:
         print "found stopwords"
-        f = open('recipe_data21.csv')
-        csv_f = csv.reader(f)
         rcp_data=[]
-        for row in csv_f:
-            rcp_data.append(row)
-     
+        with open('recipe_data1.dill','r') as f:
+             rcp_data=dill.load(f)
+        print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
             print row1
