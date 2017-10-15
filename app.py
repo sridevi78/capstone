@@ -159,8 +159,8 @@ def index():
                 ing1=ing.encode('utf-8').split(',')
                 print type(ing.encode('utf-8').split(','))
                 print "that was split by comma"
-                for words in ing1:
-                    print words
+                for jj in range(len(ing1)):
+                    print ing1[jj]
                     print "those were words"
                     for word in words.split(' '):
                         print word
