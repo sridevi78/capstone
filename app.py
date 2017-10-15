@@ -68,6 +68,8 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stopwords:
+        for sword in stopwords:
+            print sword
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
@@ -149,7 +151,7 @@ def index():
                         word=re.sub("[^a-z0-9. A-Z]+", "", word)
                         #print word
                         for sword in stopwords:
-                            print sword
+                            #print sword
                             if word.lower() in str(sword).lower() and flag==0:
                                 #print ind
                                 #print word.lower(),str(sword).lower()
