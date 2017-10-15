@@ -158,16 +158,15 @@ def index():
                 for jj in range(len(ing1)):
                     print ing1[jj]
                     ing2=ing1[jj].split(" ")
-                    print ing2
+                    print "**************"
                     for ii in range(len(ing2)):
-                        print ing2[ii]
                         if " " not in ing2[ii]:
                             print ing2[ii]
                             word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii])
                             for sword in stopwords:
                                 if word1.lower() in str(sword).lower():
                                     flag=1
-                    
+                print "**********************"    
                 print rlink
                 print flag
                 print "that was flag"
