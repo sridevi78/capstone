@@ -155,10 +155,10 @@ def index():
                 continue
             else:
                 ing1=ing.split(',')
+                print "from here"
                 for jj in range(len(ing1)):
                     print ing1[jj]
                     ing2=ing1[jj].split(" ")
-                    print "**************"
                     for ii in range(len(ing2)):
                         if " " not in ing2[ii]:
                             print ing2[ii]
@@ -166,7 +166,7 @@ def index():
                             for sword in stopwords:
                                 if word1.lower() in str(sword).lower():
                                     flag=1
-                print "**********************"    
+                    print "till here"    
                 print rlink
                 print flag
                 print "that was flag"
