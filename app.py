@@ -157,8 +157,10 @@ def index():
                 ing1=ing.split(',')
                 for jj in range(len(ing1)):
                     print ing1[jj]
-                    for word in ing1[jj].split(' '):
-                        word1=re.sub("[^a-z0-9. A-Z]+", "", word)
+                    ing2=ing1[jj].split(" ")
+                    for ii in range(len(ing2)):
+                        print ing2[ii]
+                        word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii])
                         for sword in stopwords:
                             if word1.lower() in str(sword).lower() and flag==0:
                                 flag=1
