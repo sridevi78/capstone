@@ -171,7 +171,7 @@ def index():
                     print "those were further split"
                     print flag
                     print "that was flag"
-                        break
+                    break
             if flag == 1:
                 continue
             else:
