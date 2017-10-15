@@ -75,7 +75,7 @@ def index():
         print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            print type(row1.encode('utf-8'))
+            #print type(row1.encode('utf-8'))
             row_list=row1.split('sep')
             title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
             title=title.replace('"', "").strip()
@@ -142,13 +142,13 @@ def index():
                 if rating <=0.0:
                     flag=1
              
-            print type(ing.encode('utf-8'))
-            print "those were ingredients"
+            #print type(ing.encode('utf-8'))
+            #print "those were ingredients"
             for words in ing.split(','):
                 for word in words.split(' '):
                     word=re.sub("[^a-z0-9. A-Z]+", "", word)
-                    #print word
-                    #print "that was one word"
+                    print word
+                    print "that was one word"
                     for sword in stopwords:
                         if word.lower() in str(sword).lower() and flag==0:
                             flag=1
@@ -158,19 +158,20 @@ def index():
             if flag == 1:
                 continue
             else:
-                print item1
-                print item2
-                print item3
-                print item4
-                print "Those were the preferences"
+                #print item1
+                #print item2
+                #print item3
+                #print item4
+                #print "Those were the preferences"
                 #print "**************************"
                 #print ct
                 #print rating
                 #print level1.lower()
                 #print title
-                print rlink
+                #print rlink
+                #print review
                 urls1.append((rlink,title,review))
-                
+    print urls1            
     output = sorted(urls1, key=lambda x: x[-1])[:10]
     print output
     print "reached end"
