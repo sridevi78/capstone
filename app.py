@@ -75,7 +75,7 @@ def index():
         print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            print type(row1.encode('ascii'))
+            print type(row1.encode('utf-8'))
             row_list=row1.split('sep')
             title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
             title=title.replace('"', "").strip()
@@ -99,7 +99,7 @@ def index():
             print "cook time is %d" %ct
             print "level is %s" %level
             cat=row_list[7]
-            print "category is %s" %cat.encode('ascii')
+            print "category is %s" %cat.encode('utf-8')
             rlink=row_list[8]
             print "recipe link is %s" %rlink
                       
@@ -142,7 +142,7 @@ def index():
                 if rating <=0.0:
                     flag=1
              
-            print type(ing.encode('ascii'))
+            print type(ing.encode('utf-8'))
             print "those were ingredients"
             for words in ing.split(','):
                 for word in words.split(' '):
