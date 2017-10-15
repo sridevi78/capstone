@@ -156,7 +156,7 @@ def index():
             else:
                 for words in ing.split(','):
                     print words.encode('utf-8')
-                    print "*******************"
+                    print "those were words"
                     for word in words.split(' '):
                         word=re.sub("[^a-z0-9. A-Z]+", "", word)
                         print word.encode('utf-8')
@@ -167,8 +167,9 @@ def index():
                                 #print word.lower()
                                 #print str(sword).lower()
                                 flag=1
-                        print "********************"
+                        print "those were further split"
                         print flag
+                        print "that was flag"
                         break
             if flag == 1:
                 continue
