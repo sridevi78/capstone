@@ -155,11 +155,12 @@ def index():
                 continue
             else:
                 print ing.encode('utf-8')
+                print "those are the ingredients"
                 for words in ing.encode('utf-8').split(','):
-                    print words.encode('utf-8')
+                    print words
                     print "those were words"
-                    for word in words.encode('utf-8').split(' '):
-                        print word.encode('utf-8')
+                    for word in words.split(' '):
+                        print word
                         word=re.sub("[^a-z0-9. A-Z]+", "", word.encode('utf-8'))
                         #print word.encode('utf-8')
                         for sword in stopwords:
