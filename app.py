@@ -141,17 +141,18 @@ def index():
             if 'ge0' in item3:
                 if rating <=0.0:
                     flag=1
-            if flag == 0:
-                print "flag is still 0"
-            #print type(ing.encode('utf-8'))
-            #print "those were ingredients"
-            for words in ing.split(','):
-                for word in words.split(' '):
-                    word=re.sub("[^a-z0-9. A-Z]+", "", word)
-                    #print word
-                    for sword in stopwords:
-                        if word.lower() in str(sword).lower() and flag==0:
-                            flag=1
+            if flag == 1:
+                continue
+            else:
+                for words in ing.split(','):
+                    for word in words.split(' '):
+                        word=re.sub("[^a-z0-9. A-Z]+", "", word)
+                        #print word
+                        for sword in stopwords:
+                            if word.lower() in str(sword).lower() and flag==0:
+                                print ind
+                                print word.lower(),str(sword).lower()
+                                flag=1
             if flag == 1:
                 continue
             else:
