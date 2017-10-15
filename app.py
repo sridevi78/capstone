@@ -68,6 +68,7 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stopwords:
+        print type(stopwords)
         for sword in stopwords:
             print sword
         #print "found stopwords"
