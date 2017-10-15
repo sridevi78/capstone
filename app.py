@@ -68,9 +68,10 @@ def index():
     if sesame:
         stopwords.append(stop9)
     if stopwords:
-        print type(stopwords)
-        for wd in stopwords.split(','):
+        print len(stopwords)
+        for wd in stopwords:
             print wd
+            print "that was one word"
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
