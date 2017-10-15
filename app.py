@@ -99,7 +99,7 @@ def index():
             #print "cook time is %d" %ct
             #print "level is %s" %level
             cat=row_list[7]
-            print "category is %s" %cat.encode('utf-8')
+            #print "category is %s" %cat.encode('utf-8')
             rlink=row_list[8]
             #print "recipe link is %s" %rlink
                       
@@ -147,20 +147,18 @@ def index():
             for words in ing.split(','):
                 for word in words.split(' '):
                     word=re.sub("[^a-z0-9. A-Z]+", "", word)
-                    print word
+                    #print word
                     for sword in stopwords:
                         if word.lower() in str(sword).lower() and flag==0:
                             flag=1
-            print flag
-            print "that was flag"
-            
             if flag == 1:
                 continue
             else:
+                print rlink,title,review
                 urls1.append((rlink,title,review))
-    print urls1            
+    #print urls1            
     output = sorted(urls1, key=lambda x: x[-1])[:10]
-    print output
+    #print output
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
