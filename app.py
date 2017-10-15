@@ -159,19 +159,20 @@ def index():
                         word=re.sub("[^a-z0-9. A-Z]+", "", word)
                         #print word
                         for sword in stopwords:
-                            #print sword
+                            print word.lower(),str(sword).lower()
                             if word.lower() in str(sword).lower() and flag==0:
                                 #print ind
                                 #print word.lower()
                                 #print str(sword).lower()
                                 flag=1
-   
+                        print flag
+                        break
             if flag == 1:
                 continue
             else:
                 print rlink
                 urls1.append((rlink,title,review))
-     
+    print "out of the loop"
     output = sorted(urls1, key=lambda x: x[-1])[:10]
     print "reached end"
     js_resources = INLINE.render_js()
