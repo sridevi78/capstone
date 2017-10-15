@@ -154,7 +154,7 @@ def index():
             if flag == 1:
                 continue
             else:
-                print ing
+                print ing.encode('utf-8')
                 for words in ing.split(','):
                     print words.encode('utf-8')
                     print "those were words"
