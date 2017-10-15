@@ -75,7 +75,7 @@ def index():
         print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            #print str(row1)
+            print type(row1)
             row_list=row1.split('sep')
             title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
             title=title.replace('"', "").strip()
@@ -142,7 +142,7 @@ def index():
                 if rating <=0.0:
                     flag=1
              
-            print ing
+            print type(ing)
             print "those were ingredients"
             for words in ing.split(','):
                 for word in words.split(' '):
