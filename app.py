@@ -164,7 +164,7 @@ def index():
                             word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
                             for sword in stopwords:
                                 print word1.lower(),str(sword).lower()
-                                if word1.lower() in str(sword).lower():
+                                if word1.lower() == str(sword).lower():
                                     flag=1
                     #print "till here"    
                 print rlink
