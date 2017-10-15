@@ -161,8 +161,8 @@ def index():
                     print "from here"
                     for ii in range(len(ing2)):
                         if " " not in ing2[ii]:
-                            print ing2[ii]
-                            word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii])
+                            word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
+                            print word1
                             for sword in stopwords:
                                 if word1.lower() in str(sword).lower():
                                     flag=1
