@@ -53,26 +53,31 @@ def index():
         for wd in stop1:
             stopwords.append(wd)
     if eggs:
-        stopwords.append(stop2)
+        for wd in stop2:
+            stopwords.append(wd)
     if pnut:
-        stopwords.append(stop3)
+        for wd in stop3:
+            stopwords.append(wd)
     if tnuts:
-        stopwords.append(stop4)
+        for wd in stop4:
+            stopwords.append(wd)
     if wheat:
-        stopwords.append(stop5)
+        for wd in stop5:
+            stopwords.append(wd)
     if soy:
-        stopwords.append(stop6)
+        for wd in stop6:
+            stopwords.append(wd)
     if fish:
-        stopwords.append(stop7)
+        for wd in stop7:
+            stopwords.append(wd)
     if sfish:
-        stopwords.append(stop8)
+        for wd in stop8:
+            stopwords.append(wd)
     if sesame:
-        stopwords.append(stop9)
+        for wd in stop9:
+            stopwords.append(wd)
     if stopwords:
-        print len(stopwords)
-        for wd in stopwords:
-            print wd
-            print "that was one word"
+        
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
@@ -152,7 +157,7 @@ def index():
                 for words in ing.split(','):
                     for word in words.split(' '):
                         word=re.sub("[^a-z0-9. A-Z]+", "", word)
-                        #print word
+                        print word
                         for sword in stopwords:
                             #print sword
                             if word.lower() in str(sword).lower() and flag==0:
@@ -162,7 +167,7 @@ def index():
             if flag == 1:
                 continue
             else:
-                #print rlink,title,review
+                print rlink,title,review
                 urls1.append((rlink,title,review))
     #print urls1            
     output = sorted(urls1, key=lambda x: x[-1])[:10]
