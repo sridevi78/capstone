@@ -37,7 +37,7 @@ def index():
     item1 = request.args.get('Item_1')
     item2 = request.args.get('Item_2')
     item3 = request.args.get('Item_3')
-
+    item4 = request.args.get('Item_4')
     stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
     stop2=['eggs','egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
     stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
@@ -75,7 +75,7 @@ def index():
         print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            print row1
+            print str(row1)
             row_list=row1.split('sep')
             title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
             title=title.replace('"', "").strip()
@@ -97,7 +97,10 @@ def index():
             ctime1=re.sub("[^0-9]+", "", ctime[1])
             ct=60*int(ctime0)+int(ctime1)
             print "cook time is %d" %ct
-            rlink=row_list[7]
+            print "level is %s" %level
+            cat=row_list[7]
+            print "category is %s" %cat
+            rlink=row_list[8]
             print "recipe link is %s" %rlink
                       
             flag=0
@@ -158,6 +161,7 @@ def index():
                 print item1
                 print item2
                 print item3
+                print item4
                 print "Those were the preferences"
                 #print "**************************"
                 #print ct
