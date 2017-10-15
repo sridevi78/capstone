@@ -161,13 +161,13 @@ def index():
                         for sword in stopwords:
                             #print sword
                             if word.lower() in str(sword).lower() and flag==0:
-                                print ind
+                                #print ind
                                 print word.lower(),str(sword).lower()
                                 flag=1
             if flag == 1:
                 continue
             else:
-                print rlink,title,review
+                #print rlink,title,review
                 urls1.append((rlink,title,review))
     #print urls1            
     output = sorted(urls1, key=lambda x: x[-1])[:10]
