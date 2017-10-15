@@ -169,10 +169,10 @@ def index():
             if flag == 1:
                 continue
             else:
-                print rlink
+                #print rlink
                 urls1.append((rlink,title,review))
-    print "out of the loop"
-    print urls1
+    #print "out of the loop"
+    #print urls1
     output = sorted(urls1, key=lambda x: x[-1])[:10]
     print output
     print "reached end"
