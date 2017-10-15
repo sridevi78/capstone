@@ -158,7 +158,7 @@ def index():
                     print words.encode('utf-8')
                     print "those were words"
                     for word in words.split(' '):
-                        print str(word)
+                        print word.encode('utf-8')
                         word=re.sub("[^a-z0-9. A-Z]+", "", word)
                         #print word.encode('utf-8')
                         for sword in stopwords:
@@ -168,9 +168,9 @@ def index():
                                 #print word.lower()
                                 #print str(sword).lower()
                                 flag=1
-                        print "those were further split"
-                        print flag
-                        print "that was flag"
+                    print "those were further split"
+                    print flag
+                    print "that was flag"
                         break
             if flag == 1:
                 continue
