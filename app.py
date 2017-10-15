@@ -88,20 +88,20 @@ def index():
             level=re.sub("[^a-z0-9. A-Z]+", "", row_list[5])
             level=level.replace('"', "").strip()
             ing=row_list[6]
-            print "title is %s" %title
-            print "chef is %s" %chef
-            print "rating is %s" %rating
-            print "reviews are %s" %review
+            #print "title is %s" %title
+            #print "chef is %s" %chef
+            #print "rating is %s" %rating
+            #print "reviews are %s" %review
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
             ctime1=re.sub("[^0-9]+", "", ctime[1])
             ct=60*int(ctime0)+int(ctime1)
-            print "cook time is %d" %ct
-            print "level is %s" %level
+            #print "cook time is %d" %ct
+            #print "level is %s" %level
             cat=row_list[7]
             print "category is %s" %cat.encode('utf-8')
             rlink=row_list[8]
-            print "recipe link is %s" %rlink
+            #print "recipe link is %s" %rlink
                       
             flag=0
        
@@ -148,7 +148,6 @@ def index():
                 for word in words.split(' '):
                     word=re.sub("[^a-z0-9. A-Z]+", "", word)
                     print word
-                    print "that was one word"
                     for sword in stopwords:
                         if word.lower() in str(sword).lower() and flag==0:
                             flag=1
@@ -158,18 +157,6 @@ def index():
             if flag == 1:
                 continue
             else:
-                #print item1
-                #print item2
-                #print item3
-                #print item4
-                #print "Those were the preferences"
-                #print "**************************"
-                #print ct
-                #print rating
-                #print level1.lower()
-                #print title
-                #print rlink
-                #print review
                 urls1.append((rlink,title,review))
     print urls1            
     output = sorted(urls1, key=lambda x: x[-1])[:10]
