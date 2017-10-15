@@ -160,7 +160,7 @@ def index():
                     ing2=ing1[jj].split(" ")
                     print "from here"
                     for ii in range(len(ing2)):
-                        if " " not in ing2[ii]:
+                        if ing2[ii].strip():
                             word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
                             print word1
                             for sword in stopwords:
