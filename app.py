@@ -85,57 +85,56 @@ def index():
         aller="sesame"
         for wd in stop9:
             stopwords.append(wd)
-    if 'le15' in item1:
-        co_ti="Under 15 minutes"
-    if 'le30' in item1:
-        co_ti="Under 30 minutes"
-    if 'le45' in item1:
-        co_ti="Under 45 minutes"
-    if 'le60' in item1:
-        co_ti="Under 60 minutes"
-    if 'gt60' in item1:
-        co_ti="Over 60 minutes"
-    ll=""
-    if 'ea' in item2:
-        ll="easy"
-    if 'me' in item2:
-        ll="Intermediate"
-    if 'di' in item2:
-        ll="difficult"
-    rr=""
-    if 'ge4' in item3:
-        rr="4+ stars"
-    if 'ge3' in item3:
-        rr="3+ stars"
-    if 'ge2' in item3:
-        rr="2+ stars"
-    if 'ge1' in item3:
-        rr="1+ stars"
-    if 'ge0' in item3:
-        rr="0+ stars"
-    cct=""
-    if 'md' in item4:
-        cct="Main Dish"
-    if 'app' in item4:
-        cct="Appetizer"
-    if 'dess' in item4:
-        cct="Dessert" 
- 
+    
     if stopwords:
-       #print "found stopwords"
-       rcp_data=[]
-       with open('recipe_data1.dill','r') as f:
+        if 'le15' in item1:
+            co_ti="Under 15 minutes"
+        if 'le30' in item1:
+            co_ti="Under 30 minutes"
+        if 'le45' in item1:
+            co_ti="Under 45 minutes"
+        if 'le60' in item1:
+            co_ti="Under 60 minutes"
+        if 'gt60' in item1:
+            co_ti="Over 60 minutes"
+        ll=""
+        if 'ea' in item2:
+            ll="easy"
+        if 'me' in item2:
+            ll="Intermediate"
+        if 'di' in item2:
+            ll="difficult"
+        rr=""
+        if 'ge4' in item3:
+            rr="4+ stars"
+        if 'ge3' in item3:
+            rr="3+ stars"
+        if 'ge2' in item3:
+            rr="2+ stars"
+        if 'ge1' in item3:
+            rr="1+ stars"
+        if 'ge0' in item3:
+            rr="0+ stars"
+        cct=""
+        if 'md' in item4:
+            cct="Main Dish"
+        if 'app' in item4:
+            cct="Appetizer"
+        if 'dess' in item4:
+            cct="Dessert"#print "found stopwords"
+        rcp_data=[]
+        with open('recipe_data1.dill','r') as f:
             rcp_data=dill.load(f)
-       with open('recipe_data2.dill','r') as f:
+        with open('recipe_data2.dill','r') as f:
             rcp_data2=dill.load(f)
-       with open('recipe_data3.dill','r') as f:
+        with open('recipe_data3.dill','r') as f:
             rcp_data3=dill.load(f)
-       for row in rcp_data2:
+        for row in rcp_data2:
+            rcp_data.append(row)
+        for row in rcp_data3:
            rcp_data.append(row)
-       for row in rcp_data3:
-           rcp_data.append(row)
-       print len(rcp_data)
-       for ind in range(len(rcp_data)): 
+        print len(rcp_data)
+        for ind in range(len(rcp_data)): 
            row1=rcp_data[ind]
            #print "***********************************************"
            #print row1.encode('utf-8')
