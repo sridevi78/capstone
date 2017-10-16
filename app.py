@@ -102,6 +102,9 @@ def index():
             #print "title is %s" %title
             #print "chef is %s" %chef
             #print "rating is %s" %rating
+            if review == " ":
+                review="0"
+
             print "reviews are %s" %review
             print "***********************************************"
             ctime=str(cook_time).split('H')
@@ -172,10 +175,10 @@ def index():
                 continue
             else:
                 #print rlink
-                urls1.append((rlink,title,review))
+                urls1.append((rlink,title,int(review)))
     #print "out of the loop"
     #print urls1
-    output = sorted(urls1, key=lambda x: x[-1])[:10]
+    output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
     print output
     print "reached end"
     js_resources = INLINE.render_js()
