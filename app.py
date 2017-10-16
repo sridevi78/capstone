@@ -122,6 +122,7 @@ def index():
             cct="Appetizer"
         if 'dess' in item4:
             cct="Dessert"
+        
         pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
         #print "found stopwords"
         rcp_data=[]
