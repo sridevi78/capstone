@@ -100,28 +100,29 @@ def index():
             co_ti="Under 60 minutes"
         if 'gt60' in item1:
             co_ti="Over 60 minutes"
-        if 'ea' in item2:
+        if 'ea' in item3:
             ll="easy"
-        if 'me' in item2:
+        if 'in' in item3:
             ll="Intermediate"
-        if 'di' in item2:
+        if 'di' in item3:
             ll="difficult"
-        if 'ge4' in item3:
+        if 'ge4' in item2:
             rr="4+ stars"
-        if 'ge3' in item3:
+        if 'ge3' in item2:
             rr="3+ stars"
-        if 'ge2' in item3:
+        if 'ge2' in item2:
             rr="2+ stars"
-        if 'ge1' in item3:
+        if 'ge1' in item2:
             rr="1+ stars"
-        if 'ge0' in item3:
+        if 'ge0' in item2:
             rr="0+ stars"
         if 'md' in item4:
             cct="Main Dish"
         if 'app' in item4:
             cct="Appetizer"
         if 'dess' in item4:
-            cct="Dessert"#print "found stopwords"
+            cct="Dessert"
+        #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
             rcp_data=dill.load(f)
@@ -195,7 +196,7 @@ def index():
            if 'ea' in item2:
                if 'easy' not in level.lower():
                    flag=1
-           if 'me' in item2:
+           if 'in' in item2:
                if 'intermediate' not in level.lower():
                    flag=1
            if 'di' in item2:
