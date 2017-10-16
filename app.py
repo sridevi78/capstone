@@ -253,7 +253,7 @@ def index():
                    #print "from here"
                    for ii in range(len(ing2)):
                        if ing2[ii].strip():
-                           word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
+                           word1=re.sub("[^a-z0-9.A-Z]+", "", ing2[ii].strip())
                            for sword in stopwords:
                                #print word1.lower(),str(sword).lower()
                                if word1.lower() == str(sword).lower():
@@ -269,7 +269,7 @@ def index():
     if urls1:
         output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
     else:
-        output.append("no results found","","")
+        output.append(("no results found","",""))
     pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
     print output    
     print lvl
