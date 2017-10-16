@@ -85,10 +85,10 @@ def index():
         aller="sesame"
         for wd in stop9:
             stopwords.append(wd)
-    co_ti=""   
-    ll=""
-    rr=""
-    cct=""
+    co_ti="Under 15 minutes"   
+    ll="easy"
+    rr="4+ stars"
+    cct="Main Dish"
     if stopwords:
         if 'le15' in item1:
             co_ti="Under 15 minutes"
