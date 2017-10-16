@@ -266,10 +266,10 @@ def index():
     #print "out of the loop"
     #print urls1
     output=[]
-    if urls1:
-        output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
-    else:
+    if urls1 == "":
         output.append(("no results found","",""))
+    else:
+        output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
     pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
     print output    
     print lvl
