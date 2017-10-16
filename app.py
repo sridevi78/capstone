@@ -77,7 +77,7 @@ def index():
         for wd in stop9:
             stopwords.append(wd)
     if stopwords:
-        
+        print item4
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
@@ -157,6 +157,8 @@ def index():
                 if rating <=0.0:
                     flag=1
             fl=0
+            
+            print len(cat)
             if 'en' in item4:
                 for cc in range(len(cat)):
                     #print cat[cc].encode('utf-8').lower()
