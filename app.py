@@ -158,10 +158,10 @@ def index():
                     flag=1
             fl=0
             print cat            
-            if 'en' in item4:
+            if 'md' in item4:
                 for cc in range(len(cat)):
                     #print cat[cc].encode('utf-8').lower()
-                    if 'entree' in cat[cc].encode('utf-8').lower():
+                    if 'main dish' in cat[cc].encode('utf-8').lower():
                         print "found"
                         fl=1 
                 if fl == 0:
