@@ -84,7 +84,11 @@ def index():
              rcp_data=dill.load(f)
         with open('recipe_data2.dill','r') as f:
              rcp_data2=dill.load(f)
+        with open('recipe_data3.dill','r') as f:
+             rcp_data3=dill.load(f)
         for row in rcp_data2:
+            rcp_data.append(row)
+        for row in rcp_data3:
             rcp_data.append(row)
         print len(rcp_data)
         for ind in range(len(rcp_data)): 
