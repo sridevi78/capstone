@@ -23,7 +23,7 @@ def index():
     import dill
     import unicodedata
     urls1=[]
-    lvl=[]    
+    lvl={}    
     args = flask.request.args
     milk = request.args.get('milk')
     eggs = request.args.get('eggs')
@@ -106,7 +106,11 @@ def index():
             cook_time=row_list[4].replace('"', "").strip()
             level=re.sub("[^a-z0-9. A-Z]+", "", row_list[5])
             level=level.replace('"', "").strip()
-            lvl.append(level.lower())
+            if level.lower in lvl.keys():
+                lvl[level.lower()]+=1
+            else:
+                lvl[level.lower()]=1            
+
             ing=row_list[6]
             #print "title is %s" %title
             #print "chef is %s" %chef
@@ -219,7 +223,7 @@ def index():
     #print urls1
     output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
     print output    
-    print set(lvl)
+    print lvl
     print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
