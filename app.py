@@ -158,7 +158,7 @@ def index():
                 if rating <=0.0:
                     flag=1
             fl=0
-            print level            
+            #print level            
             if 'md' in item4:
                 for cc in range(len(cat)):
                     #print cat[cc].encode('utf-8').lower()
