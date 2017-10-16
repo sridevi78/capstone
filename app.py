@@ -85,7 +85,7 @@ def index():
         #print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
-            #print type(row1.encode('utf-8'))
+            print row1.encode('utf-8')
             row_list=row1.split('sep')
             title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
             title=title.replace('"', "").strip()
@@ -101,7 +101,7 @@ def index():
             #print "title is %s" %title
             #print "chef is %s" %chef
             #print "rating is %s" %rating
-            #print "reviews are %s" %review
+            print "reviews are %s" %review
             ctime=str(cook_time).split('H')
             ctime0=re.sub("[^0-9]+", "", ctime[0])
             ctime1=re.sub("[^0-9]+", "", ctime[1])
