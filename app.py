@@ -113,9 +113,12 @@ def index():
             #print "reviews are %s" %review
             #print "***********************************************"
             ctime=str(cook_time).split('H')
-            print ctime
-            ctime0=re.sub("[^0-9]+", "", ctime[0])
-            ctime1=re.sub("[^0-9]+", "", ctime[1])
+            #print ctime
+            try:
+                ctime0=re.sub("[^0-9]+", "", ctime[0])
+                ctime1=re.sub("[^0-9]+", "", ctime[1])
+            except:
+                continue
             ct=60*int(ctime0)+int(ctime1)
             #print "cook time is %d" %ct
             #print "level is %s" %level
