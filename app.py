@@ -121,148 +121,148 @@ def index():
     if 'dess' in item4:
         cct="Dessert" 
  
-   if stopwords:
-        #print "found stopwords"
-        rcp_data=[]
-        with open('recipe_data1.dill','r') as f:
-             rcp_data=dill.load(f)
-        with open('recipe_data2.dill','r') as f:
-             rcp_data2=dill.load(f)
-        with open('recipe_data3.dill','r') as f:
-             rcp_data3=dill.load(f)
-        for row in rcp_data2:
-            rcp_data.append(row)
-        for row in rcp_data3:
-            rcp_data.append(row)
-        print len(rcp_data)
-        for ind in range(len(rcp_data)): 
-            row1=rcp_data[ind]
-            #print "***********************************************"
-            #print row1.encode('utf-8')
-            row_list=row1.split('sep')
-            title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
-            title=title.replace('"', "").strip()
-            chef=re.sub("[^a-z0-9. A-Z]+", "", row_list[1])
-            chef=chef.replace('"', "").strip()
-            rating=row_list[2].replace('"', "").strip()
-            review=row_list[3].replace('"', "").strip()
-            cook_time=re.sub("[^a-z0-9. A-Z]+", "", row_list[4])
-            cook_time=row_list[4].replace('"', "").strip()
-            level=re.sub("[^a-z0-9. A-Z]+", "", row_list[5])
-            level=level.replace('"', "").strip()
-            if level.lower() in lvl.keys():
-                lvl[level.lower()]+=1
-            else:
-                lvl[level.lower()]=1            
+    if stopwords:
+       #print "found stopwords"
+       rcp_data=[]
+       with open('recipe_data1.dill','r') as f:
+            rcp_data=dill.load(f)
+       with open('recipe_data2.dill','r') as f:
+            rcp_data2=dill.load(f)
+       with open('recipe_data3.dill','r') as f:
+            rcp_data3=dill.load(f)
+       for row in rcp_data2:
+           rcp_data.append(row)
+       for row in rcp_data3:
+           rcp_data.append(row)
+       print len(rcp_data)
+       for ind in range(len(rcp_data)): 
+           row1=rcp_data[ind]
+           #print "***********************************************"
+           #print row1.encode('utf-8')
+           row_list=row1.split('sep')
+           title=re.sub("[^a-z0-9. A-Z]+", "",row_list[0])
+           title=title.replace('"', "").strip()
+           chef=re.sub("[^a-z0-9. A-Z]+", "", row_list[1])
+           chef=chef.replace('"', "").strip()
+           rating=row_list[2].replace('"', "").strip()
+           review=row_list[3].replace('"', "").strip()
+           cook_time=re.sub("[^a-z0-9. A-Z]+", "", row_list[4])
+           cook_time=row_list[4].replace('"', "").strip()
+           level=re.sub("[^a-z0-9. A-Z]+", "", row_list[5])
+           level=level.replace('"', "").strip()
+           if level.lower() in lvl.keys():
+               lvl[level.lower()]+=1
+           else:
+               lvl[level.lower()]=1            
 
-            ing=row_list[6]
-            #print "title is %s" %title
-            #print "chef is %s" %chef
-            #print "rating is %s" %rating
-            if review == "":
-                review="0"
+           ing=row_list[6]
+           #print "title is %s" %title
+           #print "chef is %s" %chef
+           #print "rating is %s" %rating
+           if review == "":
+               review="0"
 
-            #print "reviews are %s" %review
-            #print "***********************************************"
-            ctime=str(cook_time).split('H')
-            #print ctime
-            try:
-                ctime0=re.sub("[^0-9]+", "", ctime[0])
-                ctime1=re.sub("[^0-9]+", "", ctime[1])
-            except:
-                continue
-            ct=60*int(ctime0)+int(ctime1)
-            #print "cook time is %d" %ct
-            #print "level is %s" %level
-            cat=row_list[7].split(',')
-            #print "category is %s" %cat.encode('utf-8')
-            rlink=row_list[8]
-            #print "recipe link is %s" %rlink
-                      
-            flag=0
+           #print "reviews are %s" %review
+           #print "***********************************************"
+           ctime=str(cook_time).split('H')
+           #print ctime
+           try:
+               ctime0=re.sub("[^0-9]+", "", ctime[0])
+               ctime1=re.sub("[^0-9]+", "", ctime[1])
+           except:
+               continue
+           ct=60*int(ctime0)+int(ctime1)
+           #print "cook time is %d" %ct
+           #print "level is %s" %level
+           cat=row_list[7].split(',')
+           #print "category is %s" %cat.encode('utf-8')
+           rlink=row_list[8]
+           #print "recipe link is %s" %rlink
+                     
+           flag=0
        
-            if 'le15' in item1:
-                if ct > 15:
-                    flag=1
-            if 'le30' in item1:
-                if ct > 30:
-                    flag=1
-            if 'le45' in item1:
-                if ct > 45:
-                    flag=1
-            if 'le60' in item1:
-                if ct >60:
-                    flag=1
-            if 'ea' in item2:
-                if 'easy' not in level.lower():
-                    flag=1
-            if 'me' in item2:
-                if 'intermediate' not in level.lower():
-                    flag=1
-            if 'di' in item2:
-                if 'difficult' not in level.lower():
-                    flag=1
-            if 'ge4' in item3:
-                if rating < 4.0:
-                    flag=1
-            if 'ge3' in item3:
-                if rating < 3.0:
-                    flag=1
-            if 'ge2' in item3:
-                if rating < 2.0:
-                    flag=1
-            if 'ge1' in item3:
-                if rating < 1.0:
-                    flag=1
-            if 'ge0' in item3:
-                if rating <=0.0:
-                    flag=1
-            fl=0
-            #print level            
-            if 'md' in item4:
-                for cc in range(len(cat)):
-                    #print cat[cc].encode('utf-8').lower()
-                    if 'main dish' in cat[cc].encode('utf-8').lower():
-                        #print "found"
-                        fl=1 
-                if fl == 0:
-                    flag=1
-            if 'app' in item4: 
-                for cc in range(len(cat)):
-                    #print cat[cc].encode('utf-8').lower()
-                    if 'appetizer' in cat[cc].encode('utf-8').lower():
+           if 'le15' in item1:
+               if ct > 15:
+                   flag=1
+           if 'le30' in item1:
+               if ct > 30:
+                   flag=1
+           if 'le45' in item1:
+               if ct > 45:
+                   flag=1
+           if 'le60' in item1:
+               if ct >60:
+                   flag=1
+           if 'ea' in item2:
+               if 'easy' not in level.lower():
+                   flag=1
+           if 'me' in item2:
+               if 'intermediate' not in level.lower():
+                   flag=1
+           if 'di' in item2:
+               if 'difficult' not in level.lower():
+                   flag=1
+           if 'ge4' in item3:
+               if rating < 4.0:
+                   flag=1
+           if 'ge3' in item3:
+               if rating < 3.0:
+                   flag=1
+           if 'ge2' in item3:
+               if rating < 2.0:
+                   flag=1
+           if 'ge1' in item3:
+               if rating < 1.0:
+                   flag=1
+           if 'ge0' in item3:
+               if rating <=0.0:
+                   flag=1
+           fl=0
+           #print level            
+           if 'md' in item4:
+               for cc in range(len(cat)):
+                   #print cat[cc].encode('utf-8').lower()
+                   if 'main dish' in cat[cc].encode('utf-8').lower():
                        #print "found"
-                       fl=1    
-                if fl == 0:
-                    flag=1 
-            if 'dess' in item4: 
-                for cc in range(len(cat)):
-                    #print cat[cc].encode('utf-8').lower()
-                    if 'dessert' in cat[cc].encode('utf-8').lower():
-                       #print "found"
-                       fl=1    
-                if fl == 0:
-                    flag=1
-            if flag == 1:
-                continue
-            else:
-                ing1=ing.split(',')
-                for jj in range(len(ing1)):
-                    #print ing1[jj]
-                    ing2=ing1[jj].split(" ")
-                    #print "from here"
-                    for ii in range(len(ing2)):
-                        if ing2[ii].strip():
-                            word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
-                            for sword in stopwords:
-                                #print word1.lower(),str(sword).lower()
-                                if word1.lower() == str(sword).lower():
-                                    flag=1
-            if flag == 1:
-                continue
-            else:
-                #print rlink
-                urls1.append((rlink,title,int(review)))
+                       fl=1 
+               if fl == 0:
+                   flag=1
+           if 'app' in item4: 
+               for cc in range(len(cat)):
+                   #print cat[cc].encode('utf-8').lower()
+                   if 'appetizer' in cat[cc].encode('utf-8').lower():
+                      #print "found"
+                      fl=1    
+               if fl == 0:
+                   flag=1 
+           if 'dess' in item4: 
+               for cc in range(len(cat)):
+                   #print cat[cc].encode('utf-8').lower()
+                   if 'dessert' in cat[cc].encode('utf-8').lower():
+                      #print "found"
+                      fl=1    
+               if fl == 0:
+                   flag=1
+           if flag == 1:
+               continue
+           else:
+               ing1=ing.split(',')
+               for jj in range(len(ing1)):
+                   #print ing1[jj]
+                   ing2=ing1[jj].split(" ")
+                   #print "from here"
+                   for ii in range(len(ing2)):
+                       if ing2[ii].strip():
+                           word1=re.sub("[^a-z0-9. A-Z]+", "", ing2[ii].strip())
+                           for sword in stopwords:
+                               #print word1.lower(),str(sword).lower()
+                               if word1.lower() == str(sword).lower():
+                                   flag=1
+           if flag == 1:
+               continue
+           else:
+               #print rlink
+               urls1.append((rlink,title,int(review)))
     #print "out of the loop"
     #print urls1
     output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
