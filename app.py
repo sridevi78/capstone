@@ -85,45 +85,44 @@ def index():
         aller="sesame"
         for wd in stop9:
             stopwords.append(wd)
-    co_ti=""
-    if 'le15' in item1:
-        co_ti="Under 15 minutes"
-    if 'le30' in item1:
-        co_ti="Under 30 minutes"
-    if 'le45' in item1:
-        co_ti="Under 45 minutes"
-    if 'le60' in item1:
-        co_ti="Under 60 minutes"
-    if 'gt60' in item1:
-        co_ti="Over 60 minutes"
-    ll=""
-    if 'ea' in item2:
-        ll="easy"
-    if 'me' in item2:
-        ll="Intermediate"
-    if 'di' in item2:
-        ll="difficult"
-    rr=""
-    if 'ge4' in item3:
-        rr="4+ stars"
-    if 'ge3' in item3:
-        rr="3+ stars"
-    if 'ge2' in item3:
-        rr="2+ stars"
-    if 'ge1' in item3:
-        rr="1+ stars"
-    if 'ge0' in item3:
-        rr="0+ stars"
-    cct=""
-    if 'md' in item4:
-        cct="Main Dish"
-    if 'app' in item4:
-        cct="Appetizer"
-    if 'dess' in item4:
-        cct="Dessert"
-    pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
+  
     if stopwords:
-        #print item4
+        if 'le15' in item1:
+            co_ti="Under 15 minutes"
+        if 'le30' in item1:
+            co_ti="Under 30 minutes"
+        if 'le45' in item1:
+            co_ti="Under 45 minutes"
+        if 'le60' in item1:
+            co_ti="Under 60 minutes"
+        if 'gt60' in item1:
+            co_ti="Over 60 minutes"
+        ll=""
+        if 'ea' in item2:
+            ll="easy"
+        if 'me' in item2:
+            ll="Intermediate"
+        if 'di' in item2:
+            ll="difficult"
+        rr=""
+        if 'ge4' in item3:
+            rr="4+ stars"
+        if 'ge3' in item3:
+            rr="3+ stars"
+        if 'ge2' in item3:
+            rr="2+ stars"
+        if 'ge1' in item3:
+            rr="1+ stars"
+        if 'ge0' in item3:
+            rr="0+ stars"
+        cct="" 
+        if 'md' in item4:
+            cct="Main Dish"
+        if 'app' in item4:
+            cct="Appetizer"
+        if 'dess' in item4:
+            cct="Dessert"
+        pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
