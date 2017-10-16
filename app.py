@@ -159,21 +159,21 @@ def index():
             fl=0
             if 'en' in item4:
                 for cc in range(len(cat)):
-                    print cat[cc].encode('utf-8').lower()
+                    #print cat[cc].encode('utf-8').lower()
                     if 'entree' in cat[cc].encode('utf-8').lower():
                        fl=1 
                 if fl == 0:
                     flag=1
             if 'app' in item4: 
                 for cc in range(len(cat)):
-                    print cat[cc].encode('utf-8').lower()
+                    #print cat[cc].encode('utf-8').lower()
                     if 'appetizer' in cat[cc].encode('utf-8').lower():
                        fl=1    
                 if fl == 0:
                     flag=1 
             if 'dess' in item4: 
                 for cc in range(len(cat)):
-                    print cat[cc].encode('utf-8').lower()
+                    #print cat[cc].encode('utf-8').lower()
                     if 'dessert' in cat[cc].encode('utf-8').lower():
                        fl=1    
                 if fl == 0:
