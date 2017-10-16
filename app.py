@@ -47,35 +47,81 @@ def index():
     stop7=['anchovies','bass','catfish','cod','flounder','grouper','haddock','hake','halibu','herring','mahi mahi','perch','pike','pollock','salmon','scrod','sole','snapper','swordfish','tilapia','trout','tuna','fish oil','fish sticks','fish','barbecue sauce','caesar dressing','caesar salad','worcestershire sauce']
     stop8=['barnacle','crab','crawfish','krill','lobster','prawns','shrimp','clams','mussels','scallops','snails','squid']
     stop9=['gingelly oil','sesame flour','sesame oil','sesame paste','sesame salt','sesame seed','tahini','til']
-
+    aller=""
     stopwords=[]
     if milk:
+        aller="milk"
         for wd in stop1:
             stopwords.append(wd)
     if eggs:
+        aller="eggs"
         for wd in stop2:
             stopwords.append(wd)
     if pnut:
+        aller="peanuts"
         for wd in stop3:
             stopwords.append(wd)
     if tnuts:
+        aller="treenuts"
         for wd in stop4:
             stopwords.append(wd)
     if wheat:
+        aller="wheat"
         for wd in stop5:
             stopwords.append(wd)
     if soy:
+        aller="soy"
         for wd in stop6:
             stopwords.append(wd)
     if fish:
+        aller="fish"
         for wd in stop7:
             stopwords.append(wd)
     if sfish:
+        aller="shellfish"
         for wd in stop8:
             stopwords.append(wd)
     if sesame:
+        aller="sesame"
         for wd in stop9:
             stopwords.append(wd)
+    co_ti=""
+    if 'le15' in item1:
+        co_ti="Under 15 minutes"
+    if 'le30' in item1:
+        co_ti="Under 30 minutes"
+    if 'le45' in item1:
+        co_ti="Under 45 minutes"
+    if 'le60' in item1:
+        co_ti="Under 60 minutes"
+    if 'gt60' in item1:
+        co_ti="Over 60 minutes"
+    ll=""
+    if 'ea' in item2:
+        ll="easy"
+    if 'me' in item2:
+        ll="Intermediate"
+    if 'di' in item2:
+        ll="difficult"
+    rr=""
+    if 'ge4' in item3:
+        rr="4+ stars"
+    if 'ge3' in item3:
+        rr="3+ stars"
+    if 'ge2' in item3:
+        rr="2+ stars"
+    if 'ge1' in item3:
+        rr="1+ stars"
+    if 'ge0' in item3:
+        rr="0+ stars"
+    cct=""
+    if 'md' in item4:
+        cct="Main Dish"
+    if 'app' in item4:
+        cct="Appetizer"
+    if 'dess' in item4:
+        cct="Dessert"
+    pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
     if stopwords:
         #print item4
         #print "found stopwords"
@@ -231,7 +277,7 @@ def index():
            'index.html',
            js_resources=js_resources,
            css_resources=css_resources,
-          _milk=milk,
+           _milk=milk,
            _eggs=eggs,
            _pnut=pnut,
            _tnuts=tnuts,
@@ -240,8 +286,9 @@ def index():
            _fish=fish,
            _sfish=sfish,
            _sesame=sesame,
-           _urls=output
-          )
+           _urls=output,
+           _pref=pref
+     )
     return encode_utf8(html)
 
 
