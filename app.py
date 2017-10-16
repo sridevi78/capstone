@@ -106,7 +106,7 @@ def index():
             cook_time=row_list[4].replace('"', "").strip()
             level=re.sub("[^a-z0-9. A-Z]+", "", row_list[5])
             level=level.replace('"', "").strip()
-            if level.lower in lvl.keys():
+            if level.lower() in lvl.keys():
                 lvl[level.lower()]+=1
             else:
                 lvl[level.lower()]=1            
