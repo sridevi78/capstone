@@ -113,7 +113,7 @@ def index():
             ct=60*int(ctime0)+int(ctime1)
             #print "cook time is %d" %ct
             #print "level is %s" %level
-            cat=row_list[7]
+            cat=row_list[7].split(',')
             #print "category is %s" %cat.encode('utf-8')
             rlink=row_list[8]
             #print "recipe link is %s" %rlink
@@ -156,6 +156,25 @@ def index():
             if 'ge0' in item3:
                 if rating <=0.0:
                     flag=1
+            fl=0
+            if 'en' in item4:
+                for cc in range(len(cat)):
+                    if 'entree' in cat[cc].lower():
+                       fl=1 
+                if fl == 0:
+                    flag=1
+            if 'app' in item4: 
+                for cc in range(len(cat)):
+                    if 'appetizer' in cat[cc].lower():
+                       fl=1    
+                if fl == 0:
+                    flag=1 
+            if 'dess' in item4: 
+                for cc in range(len(cat)):
+                    if 'dessert' in cat[cc].lower():
+                       fl=1    
+                if fl == 0:
+                    flag=1
             if flag == 1:
                 continue
             else:
@@ -179,8 +198,7 @@ def index():
     #print "out of the loop"
     #print urls1
     output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
-    print output
-    print "reached end"
+    print output    print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
     html = flask.render_template(
