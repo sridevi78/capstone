@@ -265,10 +265,11 @@ def index():
                urls1.append((rlink,title,int(review)))
     #print "out of the loop"
     #print urls1
+    output=[]
     if urls1:
         output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
     else:
-        output=("no results found","","")
+        output.append("no results found","","")
     pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
     print output    
     print lvl
