@@ -123,7 +123,7 @@ def index():
         if 'dess' in item4:
             cct="Dessert"
         
-        pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
+        #pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
@@ -268,6 +268,7 @@ def index():
     #print "out of the loop"
     #print urls1
     output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
+    pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
     print output    
     print lvl
     print "reached end"
