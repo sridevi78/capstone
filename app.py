@@ -82,7 +82,11 @@ def index():
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
              rcp_data=dill.load(f)
-        #print len(rcp_data)
+        with open('recipe_data2.dill','r') as f:
+             rcp_data2=dill.load(f)
+        for row in rcp_data2:
+            rcp_data.append(row)
+        print len(rcp_data)
         for ind in range(len(rcp_data)): 
             row1=rcp_data[ind]
             #print "***********************************************"
