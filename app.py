@@ -85,9 +85,11 @@ def index():
         aller="sesame"
         for wd in stop9:
             stopwords.append(wd)
-    
+    co_ti=""   
+    ll=""
+    rr=""
+    cct=""
     if stopwords:
-        co_ti=""
         if 'le15' in item1:
             co_ti="Under 15 minutes"
         if 'le30' in item1:
@@ -98,14 +100,12 @@ def index():
             co_ti="Under 60 minutes"
         if 'gt60' in item1:
             co_ti="Over 60 minutes"
-        ll=""
         if 'ea' in item2:
             ll="easy"
         if 'me' in item2:
             ll="Intermediate"
         if 'di' in item2:
             ll="difficult"
-        rr=""
         if 'ge4' in item3:
             rr="4+ stars"
         if 'ge3' in item3:
@@ -116,7 +116,6 @@ def index():
             rr="1+ stars"
         if 'ge0' in item3:
             rr="0+ stars"
-        cct=""
         if 'md' in item4:
             cct="Main Dish"
         if 'app' in item4:
