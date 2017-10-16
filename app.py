@@ -87,6 +87,7 @@ def index():
             stopwords.append(wd)
     
     if stopwords:
+        co_ti=""
         if 'le15' in item1:
             co_ti="Under 15 minutes"
         if 'le30' in item1:
