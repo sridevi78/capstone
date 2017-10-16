@@ -266,7 +266,7 @@ def index():
     #print "out of the loop"
     #print urls1
     output=[]
-    if urls1 == "":
+    if len(urls1) == 0:
         print "here"
         output.append(("","no results found",""))
     else:
