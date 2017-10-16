@@ -103,7 +103,7 @@ def index():
         if 'ea' in item3:
             ll="easy"
         if 'in' in item3:
-            ll="Intermediate"
+            ll="intermediate"
         if 'di' in item3:
             ll="difficult"
         if 'ge4' in item2:
@@ -193,28 +193,28 @@ def index():
            if 'le60' in item1:
                if ct >60:
                    flag=1
-           if 'ea' in item2:
+           if 'ea' in item3:
                if 'easy' not in level.lower():
                    flag=1
-           if 'in' in item2:
+           if 'in' in item3:
                if 'intermediate' not in level.lower():
                    flag=1
-           if 'di' in item2:
+           if 'di' in item3:
                if 'difficult' not in level.lower():
                    flag=1
-           if 'ge4' in item3:
+           if 'ge4' in item2:
                if rating < 4.0:
                    flag=1
-           if 'ge3' in item3:
+           if 'ge3' in item2:
                if rating < 3.0:
                    flag=1
-           if 'ge2' in item3:
+           if 'ge2' in item2:
                if rating < 2.0:
                    flag=1
-           if 'ge1' in item3:
+           if 'ge1' in item2:
                if rating < 1.0:
                    flag=1
-           if 'ge0' in item3:
+           if 'ge0' in item2:
                if rating <=0.0:
                    flag=1
            fl=0
@@ -265,7 +265,10 @@ def index():
                urls1.append((rlink,title,int(review)))
     #print "out of the loop"
     #print urls1
-    output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
+    if urls1:
+        output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
+    else:
+        output="no results found"
     pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
     print output    
     print lvl
