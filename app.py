@@ -102,7 +102,7 @@ def index():
             #print "title is %s" %title
             #print "chef is %s" %chef
             #print "rating is %s" %rating
-            if review == " ":
+            if review == "":
                 review="0"
 
             print "reviews are %s" %review
