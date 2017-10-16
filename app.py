@@ -136,7 +136,7 @@ def index():
                 if 'easy' not in level.lower():
                     flag=1
             if 'me' in item2:
-                if 'medium' not in level.lower():
+                if 'intermediate' not in level.lower():
                     flag=1
             if 'di' in item2:
                 if 'difficult' not in level.lower():
@@ -157,7 +157,7 @@ def index():
                 if rating <=0.0:
                     flag=1
             fl=0
-            #print cat            
+            print level            
             if 'md' in item4:
                 for cc in range(len(cat)):
                     #print cat[cc].encode('utf-8').lower()
