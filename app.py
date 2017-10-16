@@ -77,7 +77,7 @@ def index():
         for wd in stop9:
             stopwords.append(wd)
     if stopwords:
-        print item4
+        #print item4
         #print "found stopwords"
         rcp_data=[]
         with open('recipe_data1.dill','r') as f:
@@ -157,12 +157,12 @@ def index():
                 if rating <=0.0:
                     flag=1
             fl=0
-            print cat            
+            #print cat            
             if 'md' in item4:
                 for cc in range(len(cat)):
                     #print cat[cc].encode('utf-8').lower()
                     if 'main dish' in cat[cc].encode('utf-8').lower():
-                        print "found"
+                        #print "found"
                         fl=1 
                 if fl == 0:
                     flag=1
@@ -170,7 +170,7 @@ def index():
                 for cc in range(len(cat)):
                     #print cat[cc].encode('utf-8').lower()
                     if 'appetizer' in cat[cc].encode('utf-8').lower():
-                       print "found"
+                       #print "found"
                        fl=1    
                 if fl == 0:
                     flag=1 
@@ -178,7 +178,7 @@ def index():
                 for cc in range(len(cat)):
                     #print cat[cc].encode('utf-8').lower()
                     if 'dessert' in cat[cc].encode('utf-8').lower():
-                       print "found"
+                       #print "found"
                        fl=1    
                 if fl == 0:
                     flag=1
