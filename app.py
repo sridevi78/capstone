@@ -198,7 +198,8 @@ def index():
     #print "out of the loop"
     #print urls1
     output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
-    print output    print "reached end"
+    print output    
+    print "reached end"
     js_resources = INLINE.render_js()
     css_resources = INLINE.render_css()
     html = flask.render_template(
