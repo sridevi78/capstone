@@ -105,7 +105,7 @@ def index():
         if 'in' in item3:
             ll="intermediate"
         if 'di' in item3:
-            ll="difficult"
+            ll="advanced"
         if 'ge4' in item2:
             rr="4+ stars"
         if 'ge3' in item2:
@@ -207,8 +207,8 @@ def index():
            if 'in' in item3:
                if 'intermediate' not in level.lower():
                    flag=1
-           if 'di' in item3:
-               if 'difficult' not in level.lower():
+           if 'ad' in item3:
+               if 'advanced' not in level.lower():
                    flag=1
            if 'ge4' in item2:
                if rating < 4.0:

@@ -1,9 +1,9 @@
 import dill
 import re
-stopwords=['worcestershire','chicken','fish','tilapia','shrimp','scallop','salmon','scallop','salmon','haddock','beef','lamb','goat','bison','turkey','pork','bacon','ham','dog','prosciutto','salami','sausage','mutton','venison','duck','boar','anchovies','swordfish','tuna','trout','cod','sardine','bass','catfish','flounder','grouper','hallibut','herring','mahi','snapper','lobster','squid','oyster']
+stopwords=['wheat','durum','semolina','farina','wheatberry','wheatberries','emmer','spelt','farro','graham','einkorn','rye','pastry','pastries','croissant','pita','naan','bagel','flatbread','cornbread','pretzel','goldfish','cake','cookie','crust','brownie','barley','triticale','malt','yeast','pasta','noodle','ramen','udon','soba','chow','mein','bread','pastry','muffin','donut','doughnut','roll','pancake','waffle','toast','crepe','biscuit','breadcrumb','stuffing','dressing','soy','tortilla','beer']
 rcp_data=[]
-veg=[]
-nonveg=[]
+gf=[]
+ngf=[]
 
 with open('recipe_data1.dill','rb') as f:
     rcp_data=dill.load(f)
@@ -45,13 +45,13 @@ for ind in range(len(rcp_data)):
                     if word1.lower() == str(sword).lower():
                         flag=1
     if flag == 0:
-        veg.append(rlink)
+        gf.append(rlink)
     elif flag == 1:
-        nonveg.append(rlink)
+        ngf.append(rlink)
     #print(row1)
-for row in veg:
+for row in gf:
     print(row)
     print()
 
-print("Number of veg recipes is %d" %len(veg))
-print("Number of non-veg recipes is %d" %len(nonveg))
+print("Number of Gluten free recipes is %d" %len(gf))
+print("Number of recipes containing gluten is %d" %len(ngf))
