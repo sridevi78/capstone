@@ -162,7 +162,7 @@ def index():
                lvl[level.lower()]+=1
            else:
                lvl[level.lower()]=1            
-
+           print level.lower()
            ing=row_list[6]
            #print "title is %s" %title
            #print "chef is %s" %chef
