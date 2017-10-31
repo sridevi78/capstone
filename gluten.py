@@ -49,9 +49,9 @@ for ind in range(len(rcp_data)):
     elif flag == 1:
         ngf.append(rlink)
     #print(row1)
-for row in gf:
-    print(row)
-    print()
+#for row in gf:
+#    print(row)
+#    print()
 
 print("Number of Gluten free recipes is %d" %len(gf))
 print("Number of recipes containing gluten is %d" %len(ngf))

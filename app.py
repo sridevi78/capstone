@@ -124,16 +124,20 @@ def index():
             cct="Dessert"
         #print "found stopwords"
         rcp_data=[]
-        with open('recipe_data1.dill','r') as f:
+        with open('recipe_data21.dill','r') as f:
             rcp_data=dill.load(f)
-        with open('recipe_data2.dill','r') as f:
+        with open('recipe_data22.dill','r') as f:
             rcp_data2=dill.load(f)
-        with open('recipe_data3.dill','r') as f:
+        with open('recipe_data23.dill','r') as f:
             rcp_data3=dill.load(f)
-        with open('recipe_data4.dill','r') as f:
+        with open('recipe_data24.dill','r') as f:
             rcp_data4=dill.load(f)
-        with open('recipe_data5.dill','r') as f:
+        with open('recipe_data25.dill','r') as f:
             rcp_data5=dill.load(f)
+        with open('recipe_data26.dill','r') as f:
+            rcp_data6=dill.load(f)
+        with open('recipe_data27.dill','r') as f:
+            rcp_data7=dill.load(f)
         for row in rcp_data2:
             rcp_data.append(row)
         for row in rcp_data3:
@@ -141,6 +145,10 @@ def index():
         for row in rcp_data4:
            rcp_data.append(row)
         for row in rcp_data5:
+           rcp_data.append(row)
+        for row in rcp_data6:
+           rcp_data.append(row)
+        for row in rcp_data7:
            rcp_data.append(row)
         print len(rcp_data)
         for ind in range(len(rcp_data)): 
