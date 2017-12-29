@@ -312,6 +312,6 @@ def index():
     return encode_utf8(html)
 
 
-
+#app to display recipes from the food network website
 if __name__ == '__main__':
   app.run(port=33507)
