@@ -3,7 +3,7 @@ import flask
 
 app = Flask(__name__)
 
-
+#This app uses recipe data from the Food Network website to list recipes for people with diet restrictions
 @app.route('/')
 
 def index():
@@ -24,6 +24,8 @@ def index():
     import unicodedata
     urls1=[]
     lvl={}    
+
+    #reading user allergy information and recipe preferences
     args = flask.request.args
     milk = request.args.get('milk')
     eggs = request.args.get('eggs')
@@ -38,6 +40,8 @@ def index():
     item2 = request.args.get('Item_2')
     item3 = request.args.get('Item_3')
     item4 = request.args.get('Item_4')
+
+#stop words for different allergies
     stop1=['butter', 'buttermilk', 'cheese', 'cottage cheese', 'cream','curds','custard','ghee','ice cream','half and half','pudding','sour cream','whey','yoghurt']
     stop2=['eggs','egg','eggnog','mayo','mayonnaise','meringue','marshmallow','egg substitute','ice cream','nougat']
     stop3=['peanut','peanut oil','beer nuts','ground nuts','peanut butter','peanut flour']
@@ -49,6 +53,8 @@ def index():
     stop9=['gingelly oil','sesame flour','sesame oil','sesame paste','sesame salt','sesame seed','tahini','til']
     aller=""
     stopwords=[]
+    
+    #picking the right stop words depending on the user's allergies
     if milk:
         aller="milk"
         for wd in stop1:
@@ -85,6 +91,8 @@ def index():
         aller="sesame"
         for wd in stop9:
             stopwords.append(wd)
+
+    #storing user preferences
     co_ti="Under 15 minutes"   
     ll="easy"
     rr="4+ stars"
@@ -123,6 +131,8 @@ def index():
         if 'dess' in item4:
             cct="Dessert"
         #print "found stopwords"
+
+        #reading recipe data from files 
         rcp_data=[]
         with open('recipe_datav21.dill','r') as f:
             rcp_data=dill.load(f)
@@ -138,6 +148,8 @@ def index():
             rcp_data6=dill.load(f)
         with open('recipe_datav27.dill','r') as f:
             rcp_data7=dill.load(f)
+
+        #storing the recipe info from the different files into a single list rcp_data
         for row in rcp_data2:
             rcp_data.append(row)
         for row in rcp_data3:
@@ -151,7 +163,10 @@ def index():
         for row in rcp_data7:
            rcp_data.append(row)
         print len(rcp_data)
+
+        
         for ind in range(len(rcp_data)): 
+           #extracting each recipe's information
            row1=rcp_data[ind]
            #print "***********************************************"
            #print row1.encode('utf-8')
@@ -195,6 +210,9 @@ def index():
            rlink=row_list[8]
            #print "recipe link is %s" %rlink
                      
+
+
+           #checking if the recipe meets user selected preferences
            flag=0
        
            if 'le15' in item1:
@@ -262,6 +280,7 @@ def index():
            if flag == 1:
                continue
            else:
+               #Ensuring the recipe is suitable for the user depending on the selected allergen
                ing1=ing.split(',')
                for jj in range(len(ing1)):
                    #print ing1[jj]
@@ -274,9 +293,11 @@ def index():
                                #print word1.lower(),str(sword).lower()
                                if word1.lower() == str(sword).lower():
                                    flag=1
+           #If recipe is not a fit, continue
            if flag == 1:
                continue
            else:
+           #If the recipe is a fit, append it to a list
                #print rlink
                urls1.append((rlink,title,int(review)))
     #print "out of the loop"
@@ -286,7 +307,9 @@ def index():
         print "here"
         output.append(("","no results found",""))
     else:
+        #Display the top 10 recipes based on the number of reviews
         output = sorted(urls1, key=lambda x: x[-1],reverse=True)[:10]
+    
     pref="Allergic to: %s," %aller+" Cooktime: %s," %co_ti+" Recipe Level: %s," %ll+" Rating: %s," %rr+" Recipe Category: %s" %cct
     print output    
     print lvl
